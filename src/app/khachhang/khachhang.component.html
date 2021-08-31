@@ -1,0 +1,90 @@
+<div class="khachhang">
+  <div class="khachhang__title">
+    <p>Danh Sách Khách Hàng</p>
+  </div>
+  <div class="khachhang__content">
+    <div class="khachhang__content__title">
+      <div class="khachhang__content__subtitle">
+        <p>Mã khách hàng</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p>Họ tên khách hàng</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p> Số lần thuê xe</p>
+      </div>
+      <div class="khachhang__content__subtitle red">
+        <span>Total: </span><span>{{totalKhachHang}}</span>
+
+      </div>
+    </div>
+    <div class="khachhang__content__filter">
+      <div class="khachhang__content__filter__item">
+        <input type="number" [(ngModel)]="id" placeholder="Lọc theo mã khách hàng">
+
+      </div>
+      <div class="khachhang__content__filter__item">
+        <input type="text" [(ngModel)]="hoten" placeholder="Lọc theo tên khách hàng">
+      </div>
+      <div class="khachhang__content__filter__item">
+        <input type="number" [(ngModel)]="solanthue" placeholder="Lọc theo số lần thuê">
+      </div>
+    </div>
+    <div class="khachhang__content__item"
+      *ngFor="let item of khachhang | slice: (curPage * pageSize) - pageSize :curPage * pageSize | filterKhachHang : hoten : id : solanthue">
+      <div class="khachhang__content__subitem">
+        <p>{{item?.id}}</p>
+      </div>
+      <div class="khachhang__content__subitem">
+        <p>{{item.hoten}}</p>
+      </div>
+      <div class="khachhang__content__subitem">
+        <p>{{item?.solanthue}}</p>
+      </div>
+      <div class="khachhang__content__subitem flex">
+        <div class="khachhang__button__chucnang">
+          <button type="button" class="btn btn-info btn-lg bg-button" data-toggle="modal" data-target="#myModal">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-body">
+                  <p class="center">Xác nhận xóa khách hàng<span class="darkred"> {{item.hoten}}</span></p>
+                </div>
+                <div class="modal-footer Gia-modal">
+                  <button (click)="delKhachHang(item.id)" type="button" class="btn btn-default width25"
+                    data-dismiss="modal" mat-raised-button color="warn">Xóa</button>
+                  <button type="button" class="btn btn-default width25" data-dismiss="modal" mat-stroked-button
+                    color="warn">Hủy</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="khachhang__button__chucnang">
+          <button (click)="editKhachHang(item.id)" type="button" class="btn btn-default bg-button" data-dismiss="modal">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="khachhang__button">
+
+      <button mat-raised-button color="warn" (click)="AddKhachHang()">Thêm mới</button>
+
+  </div>
+  <div class="pagination">
+    <button class="pagination-button" [disabled]="curPage == 1" (click)="curPage = curPage - 1">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span class="pagination-flex">Page {{curPage}} of {{ numberOfPages() }}</span>
+    <button class="pagination-button" [disabled]="curPage >= khachhang.length/pageSize" (click)="curPage = curPage + 1">
+      <mat-icon>arrow_forward</mat-icon>
+    </button>
+
+  </div>
+</div>

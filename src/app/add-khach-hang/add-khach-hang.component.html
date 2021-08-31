@@ -1,0 +1,27 @@
+<div class="add-khachhang">
+  <div class="add-khachhang__title">
+    <p>THÊM MỚI KHÁCH HÀNG</p>
+  </div>
+  <div class="add-khachhang__form">
+    <form [formGroup]="KhachHangForm" (ngSubmit)="onSubmit()" class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Họ Tên Khách Hàng</mat-label>
+        <input formControlName="hoten" required matInput placeholder="vd: Lê Văn A" value="">
+        <span *ngIf="KhachHangForm.controls.hoten.invalid">
+          *Cần nhập họ tên
+        </span>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Số lần thuê</mat-label>
+        <input formControlName="solanthue" required matInput placeholder="vd: 1" value="">
+        <span *ngIf="KhachHangForm.controls.solanthue.invalid">
+          *Cần nhập số lần thuê
+        </span>
+      </mat-form-field>
+    <button type="submit" [disabled]="!KhachHangForm.valid" mat-raised-button color="primary" class="btn btn-default">Hoàn tất</button>
+
+
+    </form>
+
+  </div>
+</div>

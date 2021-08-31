@@ -1,0 +1,36 @@
+
+.Gia__wrapper{
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  font-family: "Varela Round", sans-serif;}
+.Gia__container{
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+.Gia__header-zone{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  position: sticky;
+  top: 0;
+}
+.Gia__content{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+.Gia__content__leftmenu{
+  width: 20%;
+  height: auto;
+  position: sticky;
+  top: 0;
+}
+.Gia__content__right{
+  width: 80%;
+  height: auto;
+}
+

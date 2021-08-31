@@ -1,0 +1,15 @@
+<div class="Gia__wrapper">
+  <div class="Gia__container" *ngIf="isTournamentRoute()">
+    <div class="Gia__header-zone">
+      <app-header></app-header>
+    </div>
+    <div class="Gia__content">
+      <div class="Gia__content__leftmenu">
+        <app-leftmenu > </app-leftmenu>
+      </div>
+      <div class="Gia__content__right">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

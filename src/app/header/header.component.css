@@ -1,0 +1,13 @@
+.header{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+  background: #3c454e;
+  color: white;
+  position: sticky;
+  top: 0;
+}
+table {
+  width: 100%;
+}
