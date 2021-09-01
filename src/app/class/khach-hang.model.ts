@@ -8,6 +8,7 @@ export class KhachHang {
   public diachi:string = "";
   public sdt:string = ""
   public tinhtrang: any;
+
   constructor(id:string, hoten:string, solanthue:string, diachi:string, sdt:string, tinhtrang:any) {
     this.id = id;
     this.hoten = hoten;

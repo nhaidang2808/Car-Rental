@@ -16,5 +16,17 @@
       "diachi": "dxvxvxcv",
       "tinhtrang": "false"
     }
+  ],
+  "xe": [
+    {
+      "id": 1,
+      "tenxe": "toyota campry",
+      "hang": "toyota",
+      "loaixe": "xe 16 chỗ",
+      "mau": "white",
+      "purchDate":"2021-1-10",
+      "tinhtrang": "true",
+      "price_per_day": 1000000
+    }
   ]
 }

@@ -1,0 +1,139 @@
+<div class="khachhang">
+  <div class="khachhang__title">
+    <p>Danh Sách Xe Du Lịch</p>
+  </div>
+  <div class="khachhang__content">
+    <div class="khachhang__content__title">
+      <div class="khachhang__content__subtitle">
+        <p>Mã xe</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p>Tên xe</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p>Hãng xe</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p>Loại xe</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p>Màu</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p>Ngày mua</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p>Giá</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p>Tình trạng</p>
+      </div>
+      <div class="khachhang__content__subtitle red">
+        <span>Total: </span><span>{{totalXe}}</span>
+
+      </div>
+    </div>
+    <div class="khachhang__content__filter">
+      <div class="khachhang__content__filter__item">
+        <input class="filter-input" type="number" [(ngModel)]="id" placeholder="Lọc theo mã">
+      </div>
+      <div class="khachhang__content__filter__item">
+        <input class="filter-input" type="text" [(ngModel)]="tenxe" placeholder="Lọc theo tên">
+      </div>
+      <div class="khachhang__content__filter__item">
+        <input class="filter-input" type="text" [(ngModel)]="hang" placeholder="Lọc theo hãng">
+      </div>
+      <div class="khachhang__content__filter__item">
+        <input class="filter-input" type="text" [(ngModel)]="loaixe" placeholder="Lọc theo loại">
+      </div>
+      <div class="khachhang__content__filter__item">
+        <input class="filter-input" type="text" [(ngModel)]="mau" placeholder="Lọc theo màu">
+      </div>
+      <div class="khachhang__content__filter__item">
+        <input class="filter-input" type="datetime" [(ngModel)]="purchDate" placeholder="Lọc theo ngày mua">
+      </div>
+      <div class="khachhang__content__filter__item">
+        <input class="filter-input" type="number" [(ngModel)]="price_per_day" placeholder="Lọc theo giá">
+      </div>
+      <div class="khachhang__content__filter__item">
+        <select class="filter-select" [(ngModel)]="tinhtrang">
+          <option value="*">Tất cả</option>
+          <option value="true">Đang thuê</option>
+          <option value="false">Chưa thuê</option>
+        </select>
+      </div>
+    </div>
+    <div class="khachhang__content__item"
+      *ngFor="let item of xe | slice: (curPage * pageSize) - pageSize :curPage * pageSize">
+      <div class="khachhang__content__subitem">
+        <p>{{item?.id}}</p>
+      </div>
+      <div class="khachhang__content__subitem">
+        <p>{{item?.tenxe}}</p>
+      </div>
+      <div class="khachhang__content__subitem">
+        <p>{{item?.hang}}</p>
+      </div>
+      <div class="khachhang__content__subitem">
+        <p>{{item?.loaixe}}</p>
+      </div>
+      <div class="khachhang__content__subitem">
+        <p>{{item?.mau}}</p>
+      </div>
+      <div class="khachhang__content__subitem">
+        <p>{{item?.purchDate}}</p>
+      </div>
+      <div class="khachhang__content__subitem">
+        <p>{{item?.price_per_day}}</p>
+      </div>
+      <div class="khachhang__content__subitem" *ngIf="item.tinhtrang === true">
+        <p>{{item?.tinhtrang}}</p>
+      </div>
+      <div class="khachhang__content__subitem" *ngIf="item.tinhtrang === false">
+        <p>{{item?.tinhtrang}}</p>
+      </div>
+      <div class="khachhang__content__subitem flex">
+        <div class="khachhang__button__chucnang">
+          <button type="button" class="btn btn-info btn-lg bg-button" data-toggle="modal" data-target="#myModal">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-body">
+                  <p class="center">Xác nhận xóa khách hàng<span class="darkred"> {{item.hoten}}</span></p>
+                </div>
+                <div class="modal-footer Gia-modal">
+                  <button (click)="delXe(item.id)" type="button" class="btn btn-default width25"
+                    data-dismiss="modal" mat-raised-button color="warn">Xóa</button>
+                  <button type="button" class="btn btn-default width25" data-dismiss="modal" mat-stroked-button
+                    color="warn">Hủy</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="khachhang__button__chucnang">
+          <button (click)="editXe(item.id)" type="button" class="btn btn-default bg-button" data-dismiss="modal">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="khachhang__button">
+    <button mat-raised-button color="warn" (click)="AddXe()">Thêm mới</button>
+  </div>
+  <div class="pagination">
+    <button class="pagination-button" [disabled]="curPage == 1" (click)="curPage = curPage - 1">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span class="pagination-flex">Page {{curPage}} of {{ numberOfPages() }}</span>
+    <button class="pagination-button" [disabled]="curPage >= xe.length/pageSize" (click)="curPage = curPage + 1">
+      <mat-icon>arrow_forward</mat-icon>
+    </button>
+
+  </div>
+</div>
