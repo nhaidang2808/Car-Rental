@@ -30,6 +30,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { DangNhapComponent } from './dang-nhap/dang-nhap.component';
 import { TinhtrangPipe } from './pipes/tinhtrang.pipe';
 import { XeComponent } from './xe/xe.component';
+import { XePipe } from './pipes/xe.pipe';
+import { TinhtrangxePipe } from './pipes/tinhtrangxe.pipe';
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
@@ -45,7 +47,9 @@ import { XeComponent } from './xe/xe.component';
     HeaderComponent,
     DangNhapComponent,
     TinhtrangPipe,
-    XeComponent
+    XeComponent,
+    XePipe,
+    TinhtrangxePipe
   ],
   imports: [
     BrowserModule,

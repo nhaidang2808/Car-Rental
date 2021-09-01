@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
-import { debounce, debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { CommonService } from '../services/common.service';
 import { ProductService } from '../services/product.service';
 

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators'
 import { KhachHang } from '../class/khach-hang.model';
-import { Xe } from '../class/xe.class';
+import { Xe } from '../class/xe.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -89,7 +89,7 @@ export class ProductService {
     .pipe(catchError(this.handleError));
   }
   modifyXe(xeId:number ,data: Xe) {
-    const url = `${this.REST_API_SERVER}/khachhang/` + xeId;
+    const url = `${this.REST_API_SERVER}/xe/` + xeId;
     return this.httpClient
     .put<any>(url, data ,this.httpOptions)
     .pipe(catchError(this.handleError));

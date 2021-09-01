@@ -1,4 +1,4 @@
-import { Xe } from './xe.class';
+import { Xe } from './xe.model';
 
 describe('Xe', () => {
   it('should create an instance', () => {

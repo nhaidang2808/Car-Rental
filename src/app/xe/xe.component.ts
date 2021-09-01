@@ -16,7 +16,7 @@ export class XeComponent implements OnInit {
   public loaixe:string = "";
   public mau:string = "";
   public purchDate:string = "";
-  public tinhtrang:any;
+  public tinhtrang:string = "*";
   public price_per_day:string = "";
   public xe: any[] = [];
   public totalXe = 0;
@@ -45,7 +45,7 @@ export class XeComponent implements OnInit {
   };
   private loadData() {
     this.serverHttp.getXe().subscribe((data) => {
-      console.log('khachhang', data);
+      console.log('xe', data);
       this.xe = data;
       this.xe.map((e) => {
         e.tinhtrang == "true" ? e.tinhtrang = true : e.tinhtrang = false
