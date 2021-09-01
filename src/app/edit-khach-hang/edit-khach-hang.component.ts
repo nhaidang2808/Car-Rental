@@ -15,6 +15,9 @@ export class EditKhachHangComponent implements OnInit {
     hoten: new FormControl(''),
     solanthue: new FormControl(''),
     id: new FormControl(''),
+    sdt: new FormControl(''),
+    diachi: new FormControl(''),
+    tinhtrang: new FormControl(''),
   });
   constructor(
     private serverHttp: ProductService,
@@ -38,6 +41,7 @@ export class EditKhachHangComponent implements OnInit {
           this.KhachHangForm.controls[controlHoten].setValue(
             data[controlHoten]
           );
+
         }
       }
     });

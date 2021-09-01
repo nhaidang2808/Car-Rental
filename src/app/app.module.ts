@@ -28,6 +28,7 @@ import { SolanthueFilterPipe } from './pipes/solanthue-filter.pipe';
 import { HeaderComponent } from './header/header.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { DangNhapComponent } from './dang-nhap/dang-nhap.component';
+import { TinhtrangPipe } from './pipes/tinhtrang.pipe';
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
@@ -41,7 +42,8 @@ import { DangNhapComponent } from './dang-nhap/dang-nhap.component';
     FilterKhachHangPipe,
     SolanthueFilterPipe,
     HeaderComponent,
-    DangNhapComponent
+    DangNhapComponent,
+    TinhtrangPipe
   ],
   imports: [
     BrowserModule,

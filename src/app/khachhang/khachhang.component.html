@@ -8,10 +8,19 @@
         <p>Mã khách hàng</p>
       </div>
       <div class="khachhang__content__subtitle">
-        <p>Họ tên khách hàng</p>
+        <p>Họ tên</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p>Số điện thoại</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p>Địa chỉ</p>
       </div>
       <div class="khachhang__content__subtitle">
         <p> Số lần thuê xe</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p> Tình trạng</p>
       </div>
       <div class="khachhang__content__subtitle red">
         <span>Total: </span><span>{{totalKhachHang}}</span>
@@ -20,26 +29,51 @@
     </div>
     <div class="khachhang__content__filter">
       <div class="khachhang__content__filter__item">
-        <input type="number" [(ngModel)]="id" placeholder="Lọc theo mã khách hàng">
+        <input class="filter-input" type="number" [(ngModel)]="id" placeholder="Lọc theo mã">
 
       </div>
       <div class="khachhang__content__filter__item">
-        <input type="text" [(ngModel)]="hoten" placeholder="Lọc theo tên khách hàng">
+        <input class="filter-input" type="text" [(ngModel)]="hoten" placeholder="Lọc theo tên">
       </div>
       <div class="khachhang__content__filter__item">
-        <input type="number" [(ngModel)]="solanthue" placeholder="Lọc theo số lần thuê">
+        <input class="filter-input" type="number" [(ngModel)]="sdt" placeholder="Lọc theo số điện thoại">
+      </div>
+      <div class="khachhang__content__filter__item">
+        <input class="filter-input" type="text" [(ngModel)]="diachi" placeholder="Lọc theo địa chỉ">
+      </div>
+      <div class="khachhang__content__filter__item">
+        <input  class="filter-input" type="number" [(ngModel)]="solanthue" placeholder="Lọc theo số lần thuê">
+      </div>
+      <div class="khachhang__content__filter__item">
+        <select class="filter-select" [(ngModel)]="tinhtrang">
+          <option value="*">Tất cả</option>
+          <option value="true">Đang thuê</option>
+          <option value="false">Chưa thuê</option>
+        </select>
       </div>
     </div>
     <div class="khachhang__content__item"
-      *ngFor="let item of khachhang | slice: (curPage * pageSize) - pageSize :curPage * pageSize | filterKhachHang : hoten : id : solanthue">
+      *ngFor="let item of khachhang | slice: (curPage * pageSize) - pageSize :curPage * pageSize | filterKhachHang : hoten : id : solanthue : sdt : tinhtrang : diachi">
       <div class="khachhang__content__subitem">
         <p>{{item?.id}}</p>
       </div>
       <div class="khachhang__content__subitem">
-        <p>{{item.hoten}}</p>
+        <p>{{item?.hoten}}</p>
+      </div>
+      <div class="khachhang__content__subitem">
+        <p>{{item?.sdt}}</p>
+      </div>
+      <div class="khachhang__content__subitem size-10">
+        <textarea readonly class="subitem-textarea" name="" id="" cols="100%" rows="1">{{item?.diachi}}</textarea>
       </div>
       <div class="khachhang__content__subitem">
         <p>{{item?.solanthue}}</p>
+      </div>
+      <div class="khachhang__content__subitem" *ngIf="item.tinhtrang === true">
+        <p >{{item?.tinhtrang | tinhtrangPipe}}</p>
+      </div>
+      <div class="khachhang__content__subitem" *ngIf="item.tinhtrang === false">
+        <p >{{item?.tinhtrang | tinhtrangPipe}}</p>
       </div>
       <div class="khachhang__content__subitem flex">
         <div class="khachhang__button__chucnang">

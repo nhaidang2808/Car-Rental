@@ -12,12 +12,31 @@
         </span>
       </mat-form-field>
       <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Số điện thoại</mat-label>
+        <input formControlName="sdt" required matInput placeholder="vd: 0123456789" value="">
+        <span *ngIf="KhachHangForm.controls.sdt.invalid">
+          *Cần nhập sdt
+        </span>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Địa chỉ</mat-label>
+        <input formControlName="diachi" required matInput placeholder="vd: 123/343 đường xyz" value="">
+        <span *ngIf="KhachHangForm.controls.diachi.invalid">
+          *Cần nhập địa chỉ
+        </span>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Số lần thuê</mat-label>
         <input formControlName="solanthue" required matInput placeholder="vd: 1" value="">
         <span *ngIf="KhachHangForm.controls.solanthue.invalid">
           *Cần nhập số lần thuê
         </span>
       </mat-form-field>
+      <select formControlName="tinhtrang">
+        <option value="true">Đang thuê</option>
+        <option value="false">Chưa thuê</option>
+      </select>
+
     <button type="submit" [disabled]="!KhachHangForm.valid" mat-raised-button color="primary" class="btn btn-default">Hoàn tất</button>
 
 

@@ -11,11 +11,13 @@ import { KhachHang } from '../class/khach-hang.model';
 })
 export class AddKhachHangComponent implements OnInit {
 
-
   public KhachHangForm = new FormGroup({
     hoten: new FormControl(''),
     solanthue: new FormControl(''),
     id: new FormControl(''),
+    sdt: new FormControl(''),
+    diachi: new FormControl(''),
+    tinhtrang: new FormControl(),
   })
 
   constructor(
@@ -36,9 +38,11 @@ export class AddKhachHangComponent implements OnInit {
 
       }
     }
+
     console.log(newKhachHang)
     this.serverHttp.postKhachHang(newKhachHang).subscribe(data => {
       console.log(data)
+
     })
   }
 

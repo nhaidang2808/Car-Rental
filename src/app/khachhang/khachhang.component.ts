@@ -14,6 +14,9 @@ export class KhachhangComponent implements OnInit {
   hoten:string = '';
   solanthue: string = "";
   id:string='';
+  sdt:string = '';
+  tinhtrang:string = '*';
+  diachi:string = "";
   public curPage: number = 0;
   public pageSize: number = 0;
   public khachhang: any[] = [];
@@ -42,6 +45,9 @@ export class KhachhangComponent implements OnInit {
     this.serverHttp.getKhachHang().subscribe((data) => {
       console.log('khachhang', data);
       this.khachhang = data;
+      this.khachhang.map((e) => {
+        e.tinhtrang == "true" ? e.tinhtrang = true : e.tinhtrang = false
+      })
     });
   }
   public AddKhachHang() {
