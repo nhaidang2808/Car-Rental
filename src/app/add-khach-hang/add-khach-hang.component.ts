@@ -35,7 +35,6 @@ export class AddKhachHangComponent implements OnInit {
     for(const controlHoten in this.KhachHangForm.controls) {
       if(controlHoten) {
         newKhachHang[controlHoten] = this.KhachHangForm.controls[controlHoten].value;
-
       }
     }
 

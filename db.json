@@ -20,13 +20,33 @@
   "xe": [
     {
       "id": 1,
-      "tenxe": "toyota campry",
-      "hang": "toyota",
-      "loaixe": "xe 16 chỗ",
-      "mau": "white",
-      "purchDate":"2021-1-10",
+      "tenxe": "ádad",
+      "hang": "ádasd",
+      "loaixe": "ádasd",
+      "mau": "ádasd",
+      "purchDate": "4-4-2021",
       "tinhtrang": "true",
-      "price_per_day": 1000000
+      "price_per_day": "1000000"
+    },
+    {
+      "id": 2,
+      "tenxe": "ádasd",
+      "hang": "ádasd",
+      "loaixe": "ádasdasd",
+      "mau": "ádasd",
+      "purchDate": "2020-02-11",
+      "tinhtrang": "true",
+      "price_per_day": "5000000"
+    },
+    {
+      "id": 3,
+      "tenxe": "huhu",
+      "hang": "qq",
+      "loaixe": "q11",
+      "mau": "backasd",
+      "purchDate": "2021-05-12",
+      "tinhtrang": "false",
+      "price_per_day": 500000
     }
   ]
 }

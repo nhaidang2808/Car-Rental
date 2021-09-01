@@ -32,6 +32,8 @@ import { TinhtrangPipe } from './pipes/tinhtrang.pipe';
 import { XeComponent } from './xe/xe.component';
 import { XePipe } from './pipes/xe.pipe';
 import { TinhtrangxePipe } from './pipes/tinhtrangxe.pipe';
+import { AddXeComponent } from './add-xe/add-xe.component';
+
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
@@ -49,7 +51,8 @@ import { TinhtrangxePipe } from './pipes/tinhtrangxe.pipe';
     TinhtrangPipe,
     XeComponent,
     XePipe,
-    TinhtrangxePipe
+    TinhtrangxePipe,
+    AddXeComponent
   ],
   imports: [
     BrowserModule,
@@ -67,14 +70,14 @@ import { TinhtrangxePipe } from './pipes/tinhtrangxe.pipe';
     MatIconModule,
     MatTableModule,
     Ng2SearchPipeModule,
-    NgxPaginationModule
+    NgxPaginationModule,
 
   ],
   exports: [
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
   ],
   providers: [ProductService, CommonService],
   bootstrap: [AppComponent]

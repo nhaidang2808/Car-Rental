@@ -1,0 +1,63 @@
+<div class="add-khachhang">
+  <div class="add-khachhang__title">
+    <p>THÊM MỚI XE</p>
+  </div>
+  <div class="add-khachhang__form">
+    <form [formGroup]="XeForm" (ngSubmit)="onSubmit()" class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Tên xe</mat-label>
+        <input formControlName="tenxe" required matInput placeholder="vd: toyota" value="">
+        <span *ngIf="XeForm.controls.tenxe.invalid">
+          *Cần nhập tên xe
+        </span>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Hãng</mat-label>
+        <input formControlName="hang" required matInput placeholder="vd: toyota" value="">
+        <span *ngIf="XeForm.controls.hang.invalid">
+          *Cần nhập hãng
+        </span>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Loại xe</mat-label>
+        <input formControlName="loaixe" required matInput placeholder="vd: xe 4 chỗ" value="">
+        <span *ngIf="XeForm.controls.loaixe.invalid">
+          *Cần nhập loại xe
+        </span>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Màu</mat-label>
+        <input formControlName="mau" required matInput placeholder="vd: Black" value="">
+        <span *ngIf="XeForm.controls.mau.invalid">
+          *Cần nhập màu xe
+        </span>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Ngày mua</mat-label>
+        <input type="date" formControlName="purchDate" required matInput placeholder="vd: 21/2/2021" value="">
+        <span *ngIf="XeForm.controls.purchDate.invalid">
+          *Cần nhập ngày mua
+        </span>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Giá</mat-label>
+        <input   type="number" formControlName="price_per_day" required matInput placeholder="vd: 10000000" value="">
+        <span *ngIf="XeForm.controls.price_per_day.invalid">
+          *Cần nhập giá thuê
+        </span>
+      </mat-form-field>
+      <select formControlName="tinhtrang">
+        <option value="true">Đang được thuê</option>
+        <option value="false">Chưa được thuê</option>
+      </select>
+
+      <button type="submit" [disabled]="!XeForm.valid" mat-raised-button color="primary" class="btn btn-default">Hoàn
+        tất</button>
+
+
+    </form>
+
+  </div>
+</div>

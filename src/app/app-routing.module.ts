@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddKhachHangComponent } from './add-khach-hang/add-khach-hang.component';
+import { AddXeComponent } from './add-xe/add-xe.component';
 import { DangNhapComponent } from './dang-nhap/dang-nhap.component';
 import { EditKhachHangComponent } from './edit-khach-hang/edit-khach-hang.component';
 import { KhachhangComponent } from './khachhang/khachhang.component';
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path:'khachhang', component: KhachhangComponent},
   {path: 'add-khachhang', component: AddKhachHangComponent},
   {path: 'edit-khachhang/:id', component: EditKhachHangComponent},
-  {path: 'xe', component: XeComponent}
+  {path: 'xe', component: XeComponent},
+  {path: 'add-xe', component: AddXeComponent}
 ];
 
 @NgModule({
