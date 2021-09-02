@@ -7,8 +7,8 @@ export class TinhtrangxePipe implements PipeTransform {
 
   transform(tinhtrang:any):any {
     if(tinhtrang)
-      return "Chưa được thuê"
-    return "Đang được thuê"
+      return "Rãnh"
+    return "Được thuê"
   }
 
 }

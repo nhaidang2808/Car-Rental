@@ -20,12 +20,13 @@ export class AddXeComponent implements OnInit {
     tinhtrang: new FormControl(),
     price_per_day: new FormControl(''),
   })
+  usAmount: any;
   constructor(
     private serverHttp: ProductService,
     private router: Router,
     private route: ActivatedRoute
   ) { }
-
+  updateUSAmount(event:any) { this.usAmount = event.target.value; }
   ngOnInit(): void {
   }
   public onSubmit() {

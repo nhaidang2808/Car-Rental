@@ -47,6 +47,16 @@
       "purchDate": "2021-05-12",
       "tinhtrang": "false",
       "price_per_day": 500000
+    },
+    {
+      "id": 4,
+      "tenxe": "audi v5",
+      "hang": "audi",
+      "loaixe": "xe 4 chỗ",
+      "mau": "Silver",
+      "purchDate": "2021-01-21",
+      "tinhtrang": "false",
+      "price_per_day": "1000000"
     }
   ]
 }

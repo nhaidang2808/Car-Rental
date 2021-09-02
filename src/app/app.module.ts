@@ -33,7 +33,8 @@ import { XeComponent } from './xe/xe.component';
 import { XePipe } from './pipes/xe.pipe';
 import { TinhtrangxePipe } from './pipes/tinhtrangxe.pipe';
 import { AddXeComponent } from './add-xe/add-xe.component';
-
+import  {MatCurrencyFormatModule} from 'mat-currency-format';
+import { DateXePipe } from './pipes/date-xe.pipe';
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
@@ -52,7 +53,9 @@ import { AddXeComponent } from './add-xe/add-xe.component';
     XeComponent,
     XePipe,
     TinhtrangxePipe,
-    AddXeComponent
+    AddXeComponent,
+    DateXePipe,
+
   ],
   imports: [
     BrowserModule,
@@ -71,6 +74,7 @@ import { AddXeComponent } from './add-xe/add-xe.component';
     MatTableModule,
     Ng2SearchPipeModule,
     NgxPaginationModule,
+    MatCurrencyFormatModule
 
   ],
   exports: [
@@ -78,6 +82,7 @@ import { AddXeComponent } from './add-xe/add-xe.component';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
+    MatCurrencyFormatModule
   ],
   providers: [ProductService, CommonService],
   bootstrap: [AppComponent]
