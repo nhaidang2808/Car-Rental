@@ -34,7 +34,7 @@ p {
   padding: 15px 0;
 }
 .khachhang__content__subtitle {
-  width: Calc(100% / 7);
+  width: Calc(100% / 8);
   height: auto;
   text-align: center;
   padding: 10px 0;
@@ -45,7 +45,7 @@ p {
   display: flex;
 }
 .khachhang__content__filter__item {
-  width: Calc(100% / 7);
+  width: Calc(100% / 8);
   height: auto;
   text-align: center;
 }
@@ -62,7 +62,7 @@ p {
   display: flex;
 }
 .khachhang__content__subitem {
-  width: Calc(100% / 7);
+  width: Calc(100% / 8);
   height: auto;
   border-bottom: 1px solid rgba(0, 0, 0, 0.075);
   padding: 10px 0;
@@ -167,6 +167,7 @@ input {
 }
 .filter-input{
   width: 100%;
+  font-size: 10px;
 }
 .filter-select{
   width: 100%;
@@ -181,7 +182,12 @@ input {
   height: auto;
   max-height: 100px;
   overflow: hidden;
+  border: none;
 }
 .size-10{
   font-size: 13px;
+}
+input,
+input::-webkit-input-placeholder {
+    font-size: 12px;
 }

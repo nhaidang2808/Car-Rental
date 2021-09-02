@@ -1,6 +1,6 @@
 <div class="add-khachhang">
   <div class="add-khachhang__title">
-    <p>Them moi khach hang</p>
+    <p>CẬP NHẬT THÔNG TIN KHÁCH HÀNG</p>
   </div>
   <div class="add-khachhang__form">
     <form [formGroup]="KhachHangForm" class="example-form">
@@ -23,12 +23,12 @@
         <mat-label>Số lần thuê</mat-label>
         <input formControlName="solanthue" required matInput placeholder="vd: 1" value="">
       </mat-form-field>
-
-      <select formControlName="tinhtrang">
+      <div class="select">
+      <select formControlName="tinhtrang" class="round">
         <option value="true">Đang thuê</option>
         <option value="false">Chưa thuê</option>
       </select>
-
+      </div>
     <button type="submit" (click)="saveAndGoList()"  mat-raised-button color="primary" class="btn btn-default">Hoàn tất chỉnh sửa</button>
 
 

@@ -6,7 +6,8 @@
       "id": 1,
       "sdt": "0123456789",
       "diachi": "asdasdasdasd",
-      "tinhtrang": "true"
+      "tinhtrang": "true",
+      "ngaysinh": "1999-01-01"
     },
     {
       "hoten": "le van b",
@@ -14,20 +15,11 @@
       "id": 2,
       "sdt": 10111111111,
       "diachi": "dxvxvxcv",
-      "tinhtrang": "false"
+      "tinhtrang": "false",
+      "ngaysinh": "1999-01-01"
     }
   ],
   "xe": [
-    {
-      "id": 1,
-      "tenxe": "ádad",
-      "hang": "ádasd",
-      "loaixe": "ádasd",
-      "mau": "ádasd",
-      "purchDate": "4-4-2021",
-      "tinhtrang": "true",
-      "price_per_day": "1000000"
-    },
     {
       "id": 2,
       "tenxe": "ádasd",
@@ -50,13 +42,13 @@
     },
     {
       "id": 4,
-      "tenxe": "audi v5",
-      "hang": "audi",
-      "loaixe": "xe 4 chỗ",
-      "mau": "Silver",
-      "purchDate": "2021-01-21",
-      "tinhtrang": "false",
-      "price_per_day": "1000000"
+      "tenxe": "audi v5 a",
+      "hang": "audi a",
+      "loaixe": "xe 4 chỗ a",
+      "mau": "Silver aádasd",
+      "purchDate": "2021-01-22",
+      "tinhtrang": "true",
+      "price_per_day": "100000000"
     }
   ]
 }

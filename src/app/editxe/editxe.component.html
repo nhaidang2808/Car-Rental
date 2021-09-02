@@ -1,0 +1,47 @@
+<div class="add-khachhang">
+  <div class="add-khachhang__title">
+    <p>CẬP NHẬT THÔNG TIN XE </p>
+  </div>
+  <div class="add-khachhang__form">
+    <form [formGroup]="XeForm" class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Tên xe</mat-label>
+        <input formControlName="tenxe" required matInput value="">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Hãng xe</mat-label>
+        <input type="text" formControlName="hang" required matInput placeholder="vd: 123456789" value="">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Loại xe</mat-label>
+        <input type="text" formControlName="loaixe" required matInput placeholder="vd: 123/123 đường xyz" value="">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Màu</mat-label>
+        <input formControlName="mau" required matInput placeholder="vd: 1" value="">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Ngày mua</mat-label>
+        <input type="date" formControlName="purchDate" required matInput placeholder="vd: 123/123 đường xyz" value="">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Giá</mat-label>
+        <input type="text" formControlName="price_per_day" required matInput placeholder="vd: 123/123 đường xyz" value="">
+      </mat-form-field>
+      <div class="select">
+        <select formControlName="tinhtrang" class="round">
+          <option value="true">Rãnh</option>
+          <option value="false">Được thuê</option>
+        </select>
+      </div>
+
+    <button type="submit" (click)="saveAndGoList()"  mat-raised-button color="primary" class="btn btn-default">Hoàn tất chỉnh sửa</button>
+
+
+    </form>
+
+  </div>
+</div>
