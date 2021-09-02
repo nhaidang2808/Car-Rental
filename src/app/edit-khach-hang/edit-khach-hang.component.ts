@@ -18,6 +18,7 @@ export class EditKhachHangComponent implements OnInit {
     sdt: new FormControl(''),
     diachi: new FormControl(''),
     tinhtrang: new FormControl(''),
+    ngaysinh: new FormControl(''),
   });
   constructor(
     private serverHttp: ProductService,

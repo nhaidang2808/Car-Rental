@@ -7,16 +7,34 @@
       "sdt": "0123456789",
       "diachi": "asdasdasdasd",
       "tinhtrang": "true",
-      "ngaysinh": "1999-01-01"
+      "ngaysinh": "1999-02-20"
     },
     {
       "hoten": "le van b",
-      "solanthue": "2",
+      "solanthue": "23",
       "id": 2,
       "sdt": 10111111111,
       "diachi": "dxvxvxcv",
       "tinhtrang": "false",
-      "ngaysinh": "1999-01-01"
+      "ngaysinh": "1999-02-19"
+    },
+    {
+      "hoten": "ádadasd",
+      "solanthue": "2",
+      "id": 3,
+      "sdt": "123456789",
+      "diachi": "ádasdsdadasdasd",
+      "tinhtrang": "false",
+      "ngaysinh": "2001-02-06"
+    },
+    {
+      "hoten": "ádasda",
+      "solanthue": "2",
+      "id": 4,
+      "sdt": "000011111",
+      "diachi": "ádasdasdas",
+      "tinhtrang": "false",
+      "ngaysinh": "2001-03-13"
     }
   ],
   "xe": [
@@ -26,8 +44,8 @@
       "hang": "ádasd",
       "loaixe": "ádasdasd",
       "mau": "ádasd",
-      "purchDate": "2020-02-11",
-      "tinhtrang": "true",
+      "purchDate": "2019-02-11",
+      "tinhtrang": "false",
       "price_per_day": "5000000"
     },
     {
@@ -46,9 +64,9 @@
       "hang": "audi a",
       "loaixe": "xe 4 chỗ a",
       "mau": "Silver aádasd",
-      "purchDate": "2021-01-22",
+      "purchDate": "2021-05-27",
       "tinhtrang": "true",
-      "price_per_day": "100000000"
+      "price_per_day": "1000000"
     }
   ]
 }

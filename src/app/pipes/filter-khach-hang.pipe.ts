@@ -6,8 +6,8 @@ import { debounce, debounceTime, distinctUntilChanged } from 'rxjs/operators';
 })
 export class FilterKhachHangPipe implements PipeTransform {
 
-  transform(khachhang:any[], hoten:string, id:string, solanthue:string, sdt: string, tinhtrang: string, diachi:string):any {
-    if(!hoten  && !id && !solanthue && !sdt && !tinhtrang && !diachi)
+  transform(khachhang:any[], hoten:string, id:string, solanthue:string, sdt: string, tinhtrang: string, diachi:string, ngaysinh:string):any {
+    if(!hoten  && !id && !solanthue && !sdt && !tinhtrang && !diachi && !ngaysinh)
     {
       return khachhang;
     }
@@ -45,6 +45,11 @@ export class FilterKhachHangPipe implements PipeTransform {
       if(diachi) {
         khachhang = khachhang.filter(x => {
           return x.diachi.toLowerCase().indexOf(diachi.toLowerCase()) != -1
+        })
+      }
+      if(ngaysinh) {
+        khachhang = khachhang.filter((x) => {
+          return x.ngaysinh.toString().indexOf(ngaysinh) != -1;
         })
       }
     }

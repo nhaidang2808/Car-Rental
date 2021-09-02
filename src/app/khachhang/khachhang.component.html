@@ -39,16 +39,17 @@
         <input class="filter-input" type="text" [(ngModel)]="hoten" placeholder="Lọc theo tên">
       </div>
       <div class="khachhang__content__filter__item">
-        <input class="filter-input" type="number" [(ngModel)]="sdt" placeholder="Lọc theo số điện thoại">
+        <input class="filter-input" type="number" [(ngModel)]="sdt" placeholder="Lọc theo sdt">
       </div>
       <div class="khachhang__content__filter__item">
         <input class="filter-input" type="text" [(ngModel)]="diachi" placeholder="Lọc theo địa chỉ">
       </div>
       <div class="khachhang__content__filter__item">
-        <input class="filter-input" type="text" [(ngModel)]="diachi" placeholder="Lọc theo ngày sinh">
+        <input  class="filter-input" type="date" [(ngModel)]="ngaysinh" placeholder="Lọc theo ngày sinh">
       </div>
+
       <div class="khachhang__content__filter__item">
-        <input  class="filter-input" type="number" [(ngModel)]="solanthue" placeholder="Lọc theo số lần thuê">
+        <input  class="filter-input" type="number" [(ngModel)]="solanthue" placeholder="Lọc số lần thuê">
       </div>
       <div class="khachhang__content__filter__item">
         <select class="filter-select" [(ngModel)]="tinhtrang">
@@ -59,7 +60,7 @@
       </div>
     </div>
     <div class="khachhang__content__item"
-      *ngFor="let item of khachhang | slice: (curPage * pageSize) - pageSize :curPage * pageSize | filterKhachHang : hoten : id : solanthue : sdt : tinhtrang : diachi">
+      *ngFor="let item of khachhang | slice: (curPage * pageSize) - pageSize :curPage * pageSize | filterKhachHang : hoten : id : solanthue : sdt : tinhtrang : diachi : ngaysinh">
       <div class="khachhang__content__subitem">
         <p>{{item?.id}}</p>
       </div>
@@ -73,7 +74,7 @@
         <textarea readonly class="subitem-textarea" name="" id="" cols="100%" rows="1">{{item?.diachi}}</textarea>
       </div>
       <div class="khachhang__content__subitem">
-        <p>{{item?.ngaysinh}}</p>
+        <p>{{item?.ngaysinh | date : "dd/MM/yyyy"}}</p>
       </div>
       <div class="khachhang__content__subitem">
         <p>{{item?.solanthue}}</p>
@@ -131,4 +132,4 @@
 
   </div>
 </div>
-<!-- vừa mới thêm html css và db ngày sinh, lát vô làm filter -->
+

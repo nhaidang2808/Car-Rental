@@ -36,6 +36,8 @@ import { AddXeComponent } from './add-xe/add-xe.component';
 import  {MatCurrencyFormatModule} from 'mat-currency-format';
 import { DateXePipe } from './pipes/date-xe.pipe';
 import { EditxeComponent } from './editxe/editxe.component';
+
+
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
@@ -76,7 +78,10 @@ import { EditxeComponent } from './editxe/editxe.component';
     MatTableModule,
     Ng2SearchPipeModule,
     NgxPaginationModule,
-    MatCurrencyFormatModule
+    MatCurrencyFormatModule,
+
+
+
 
   ],
   exports: [

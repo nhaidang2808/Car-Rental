@@ -20,7 +20,7 @@ p {
   padding: 10px 0;
 }
 .khachhang__content {
-  width: 80%;
+  width: 100%;
   max-height: auto;
   min-height: 300px;
   margin: 30px auto;
@@ -167,11 +167,17 @@ input {
 }
 .filter-input{
   width: 100%;
+  text-align: center;
+  font-size: 15px;
+  color:rgba(0, 0, 0, 0.411);
+}
+.filter-padding{
+  text-align: center;
 }
 .filter-select{
   width: 100%;
   border: none;
-  padding: 5px 0;
+  padding: 3px 0;
   font-size: 16px;
   text-align-last:center
 }
@@ -185,3 +191,7 @@ input {
 .size-10{
   font-size: 13px;
 }
+/* input[type=date]::-webkit-calendar-picker-indicator {
+  -webkit-appearance: none;
+  display: none;
+} */

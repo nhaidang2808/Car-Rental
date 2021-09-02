@@ -50,7 +50,8 @@
         <input class="filter-input" type="text" [(ngModel)]="mau" placeholder="Lọc theo màu">
       </div>
       <div class="khachhang__content__filter__item">
-        <input class="filter-input" type="datetime" [(ngModel)]="purchDate" placeholder="Lọc theo ngày mua">
+        <input class="filter-input filter-padding" type="date"  [(ngModel)]="purchDate" placeholder="Lọc theo ngày mua">
+
       </div>
       <div class="khachhang__content__filter__item">
         <input class="filter-input" type="number" [(ngModel)]="price_per_day" placeholder="Lọc theo giá">
@@ -58,8 +59,8 @@
       <div class="khachhang__content__filter__item">
         <select class="filter-select" [(ngModel)]="tinhtrang">
           <option value="*">Tất cả</option>
-          <option value="true">Chưa được thuê</option>
-          <option value="false">Đang được thuê</option>
+          <option value="true">Rãnh</option>
+          <option value="false">Được thuê</option>
         </select>
       </div>
     </div>
@@ -81,7 +82,7 @@
         <p>{{item.mau}}</p>
       </div>
       <div class="khachhang__content__subitem">
-        <p>{{item.purchDate | date : "d/M/yy"}}</p>
+        <p>{{item.purchDate | date : "dd/MM/yyyy"}}</p>
       </div>
       <div class="khachhang__content__subitem">
         <p>{{item.price_per_day | number: '1.0-3'}} /ngày</p>

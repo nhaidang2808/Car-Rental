@@ -25,6 +25,15 @@
           *Cần nhập địa chỉ
         </span>
       </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Ngày sinh</mat-label>
+        <input type="date"  formControlName="ngaysinh" required matInput placeholder="vd: 21/2/2021" value="">
+        <span *ngIf="KhachHangForm.controls.ngaysinh.invalid">
+          *Cần nhập ngày sinh
+        </span>
+      </mat-form-field>
+
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Số lần thuê</mat-label>
         <input formControlName="solanthue" required matInput placeholder="vd: 1" value="">

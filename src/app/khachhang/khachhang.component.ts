@@ -10,6 +10,7 @@ import { ProductService } from '../services/product.service';
 })
 export class KhachhangComponent implements OnInit {
   hoten:string = '';
+  ngaysinh:string= "";
   solanthue: string = "";
   id:string='';
   sdt:string = '';
