@@ -10,6 +10,7 @@ import { ProductService } from '../services/product.service';
 })
 export class XeComponent implements OnInit {
 
+  public bienkiemsoat:string = "";
   public id:string = "";
   public tenxe: string = "";
   public hang:string = "";
@@ -26,8 +27,11 @@ export class XeComponent implements OnInit {
   constructor(
     private serverHttp: ProductService,
     private router: Router,
-    private common: CommonService
+    private common: CommonService,
   ) { }
+
+    // test del button
+
 
   ngOnInit(): void {
     this.loadData();
@@ -56,12 +60,13 @@ export class XeComponent implements OnInit {
     this.router.navigate(['add-xe']);
   }
 
-  public delXe(xeId: any) {
+  public delXe(xeId: number) {
     console.log('xe', xeId);
     this.serverHttp.delXe(xeId).subscribe((data) => {
       console.log('delete', data);
       this.loadData();
     });
+
   }
   public editXe(xeId: any) {
     this.router.navigate(['edit-xe', xeId]);

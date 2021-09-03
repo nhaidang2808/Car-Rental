@@ -69,13 +69,13 @@ export class ProductService {
     .pipe(catchError(this.handleError));
   }
   delKhachHang(khachhangId: number){
-    const url = `${this.REST_API_SERVER}/khachhang/${khachhangId}`;
+    const url = `${this.REST_API_SERVER}/khachhang/` + khachhangId;
     return this.httpClient
     .delete<any>(url)
     .pipe(catchError(this.handleError));
   }
   delXe(xeId: number){
-    const url = `${this.REST_API_SERVER}/xe/${xeId}`;
+    const url = `${this.REST_API_SERVER}/xe/` + xeId;
     return this.httpClient
     .delete<any>(url)
     .pipe(catchError(this.handleError));

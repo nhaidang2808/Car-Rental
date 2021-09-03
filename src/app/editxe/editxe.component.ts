@@ -20,13 +20,16 @@ export class EditxeComponent implements OnInit {
     purchDate: new FormControl(''),
     tinhtrang: new FormControl(),
     price_per_day: new FormControl(''),
+    bienkiemsoat: new FormControl(''),
   })
+  usAmount: any;
   constructor(
     private serverHttp: ProductService,
     private router: Router,
     private common: CommonService,
     private route: ActivatedRoute
   ) { }
+  updateUSAmount(event:any) { this.usAmount = event.target.value; }
 
   ngOnInit(): void {
     this.id = Number(this.route.snapshot.paramMap.get('id'));

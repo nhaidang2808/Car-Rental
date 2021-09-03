@@ -19,6 +19,7 @@ export class AddXeComponent implements OnInit {
     purchDate: new FormControl(''),
     tinhtrang: new FormControl(),
     price_per_day: new FormControl(''),
+    bienkiemsoat: new FormControl(''),
   })
   usAmount: any;
   constructor(

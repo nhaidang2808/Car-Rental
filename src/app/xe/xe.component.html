@@ -26,11 +26,13 @@
         <p>Giá</p>
       </div>
       <div class="khachhang__content__subtitle">
+        <p>Biển kiểm soát</p>
+      </div>
+      <div class="khachhang__content__subtitle">
         <p>Tình trạng</p>
       </div>
       <div class="khachhang__content__subtitle red">
         <span>Total: </span><span>{{totalXe}}</span>
-
       </div>
     </div>
     <div class="khachhang__content__filter">
@@ -50,11 +52,13 @@
         <input class="filter-input" type="text" [(ngModel)]="mau" placeholder="Lọc theo màu">
       </div>
       <div class="khachhang__content__filter__item">
-        <input class="filter-input filter-padding" type="date"  [(ngModel)]="purchDate" placeholder="Lọc theo ngày mua">
-
+        <input class="filter-input filter-padding" type="date" [(ngModel)]="purchDate" placeholder="Lọc theo ngày mua">
       </div>
       <div class="khachhang__content__filter__item">
-        <input class="filter-input" type="number" [(ngModel)]="price_per_day" placeholder="Lọc theo giá">
+        <input class="filter-input" type="text" [(ngModel)]="price_per_day" placeholder="Lọc theo giá">
+      </div>
+      <div class="khachhang__content__filter__item">
+        <input class="filter-input" type="text" [(ngModel)]="bienkiemsoat" placeholder="Lọc biển kiểm soát">
       </div>
       <div class="khachhang__content__filter__item">
         <select class="filter-select" [(ngModel)]="tinhtrang">
@@ -65,7 +69,7 @@
       </div>
     </div>
     <div class="khachhang__content__item"
-      *ngFor="let item of xe | slice: (curPage * pageSize) - pageSize :curPage * pageSize | xePipe : id : tenxe : hang : loaixe : mau : purchDate : price_per_day : tinhtrang">
+      *ngFor="let item of xe | slice: (curPage * pageSize) - pageSize :curPage * pageSize | xePipe : id : tenxe : hang : loaixe : mau : purchDate : price_per_day : tinhtrang : bienkiemsoat">
       <div class="khachhang__content__subitem">
         <p>{{item.id}}</p>
       </div>
@@ -87,6 +91,9 @@
       <div class="khachhang__content__subitem">
         <p>{{item.price_per_day | number: '1.0-3'}} /ngày</p>
       </div>
+      <div class="khachhang__content__subitem">
+        <p>{{item.bienkiemsoat}}</p>
+      </div>
       <div class="khachhang__content__subitem" *ngIf="item.tinhtrang === true">
         <p>{{item?.tinhtrang | tinhtrangxepPipe}}</p>
       </div>
@@ -95,26 +102,25 @@
       </div>
       <div class="khachhang__content__subitem flex">
         <div class="khachhang__button__chucnang">
-          <button type="button" class="btn btn-info btn-lg bg-button" data-toggle="modal" data-target="#myModal">
+          <button (click)="delXe(item.id)" type="button" class="btn btn-info btn-lg bg-button" data-toggle="modal" data-target="#myModal">
             <mat-icon>delete</mat-icon>
           </button>
-          <!-- Modal -->
           <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
-              <!-- Modal content-->
               <div class="modal-content">
                 <div class="modal-body">
-                  <p class="center">Xác nhận xóa khách hàng<span class="darkred"> {{item.hoten}}</span></p>
+                  <p class="center">Xác nhận xóa xe <span class="darkred"> {{item.tenxe}}</span></p>
                 </div>
                 <div class="modal-footer Gia-modal">
-                  <button (click)="delXe(item.id)" type="button" class="btn btn-default width25"
-                    data-dismiss="modal" mat-raised-button color="warn">Xóa</button>
+                  <button  type="button" class="btn btn-default width25" data-dismiss="modal"
+                    mat-raised-button color="warn">Xóa</button>
                   <button type="button" class="btn btn-default width25" data-dismiss="modal" mat-stroked-button
                     color="warn">Hủy</button>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
         <div class="khachhang__button__chucnang">
           <button (click)="editXe(item.id)" type="button" class="btn btn-default bg-button" data-dismiss="modal">

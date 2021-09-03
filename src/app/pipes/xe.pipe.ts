@@ -13,7 +13,8 @@ export class XePipe implements PipeTransform {
     mau: string,
     purchDate: string,
     price_per_day: string,
-    tinhtrang: any
+    tinhtrang: any,
+    bienkiemsoat:string
   ): any {
     if (
       !id &&
@@ -23,7 +24,8 @@ export class XePipe implements PipeTransform {
       !mau &&
       !purchDate &&
       !price_per_day &&
-      !tinhtrang
+      !tinhtrang &&
+      !bienkiemsoat
     ) {
       return xe;
     } else {
@@ -61,6 +63,11 @@ export class XePipe implements PipeTransform {
         xe = xe.filter((x) => {
           return x.purchDate.toString().indexOf(purchDate) != -1;
         })
+      }
+      if(bienkiemsoat) {
+        xe = xe.filter((x) => {
+          return x.bienkiemsoat.toLowerCase().indexOf(bienkiemsoat.toLowerCase()) != -1;
+        });
       }
       if (tinhtrang) {
         if (tinhtrang === '*')

@@ -29,7 +29,15 @@
       </mat-form-field>
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Giá</mat-label>
-        <input type="text" formControlName="price_per_day" required matInput placeholder="vd: 123/123 đường xyz" value="">
+        <input mvndrMatCurrencyFormat
+        [allowNegative]="false"
+        [currencyCode]="'VND'"
+        [value]="usAmount"
+        (blur)="updateUSAmount($event)" type="text" formControlName="price_per_day" required matInput placeholder="vd: 123/123 đường xyz" value="">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Biển kiểm soát</mat-label>
+        <input formControlName="bienkiemsoat" required matInput placeholder="vd: ASD" value="">
       </mat-form-field>
       <div class="select">
         <select formControlName="tinhtrang" class="round">

@@ -35,7 +35,7 @@
 
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Ngày mua</mat-label>
-        <input type="date"  formControlName="purchDate" required matInput placeholder="vd: 21/2/2021" value="">
+        <input type="date" formControlName="purchDate" required matInput placeholder="vd: 21/2/2021" value="">
         <span *ngIf="XeForm.controls.purchDate.invalid">
           *Cần nhập ngày mua
         </span>
@@ -43,13 +43,18 @@
 
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Giá</mat-label>
-        <input type="text"  mvndrMatCurrencyFormat
-        [allowNegative]="false"
-        [currencyCode]="'VND'"
-        [value]="usAmount"
-        (blur)="updateUSAmount($event)" formControlName="price_per_day" required matInput placeholder="vd: 10000000" value="">
+        <input type="text" mvndrMatCurrencyFormat [allowNegative]="false" [currencyCode]="'VND'" [value]="usAmount"
+          (blur)="updateUSAmount($event)" formControlName="price_per_day" required matInput placeholder="vd: 10000000"
+          value="">
         <span *ngIf="XeForm.controls.price_per_day.invalid">
           *Cần nhập giá thuê
+        </span>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Biển kiểm soát</mat-label>
+        <input formControlName="bienkiemsoat" required matInput placeholder="vd: Black" value="">
+        <span *ngIf="XeForm.controls.bienkiemsoat.invalid">
+          *Cần nhập màu xe
         </span>
       </mat-form-field>
       <select formControlName="tinhtrang">
@@ -59,8 +64,6 @@
 
       <button type="submit" [disabled]="!XeForm.valid" mat-raised-button color="primary" class="btn btn-default">Hoàn
         tất</button>
-
-
     </form>
 
   </div>
