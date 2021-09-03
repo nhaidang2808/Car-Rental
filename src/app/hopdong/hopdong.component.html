@@ -1,0 +1,133 @@
+<div class="khachhang">
+  <div class="khachhang__title">
+    <p>Danh Sách Hợp Đồng</p>
+  </div>
+  <div class="khachhang__content">
+    <div class="khachhang__content__title">
+      <div class="khachhang__content__subtitle">
+        <p>Mã</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p>Người thuê</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p>Số ngày thuê</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p>Ngày giao xe</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p>Ngày trả xe</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p>Giá</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p>Trễ hạn</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p>Phí trễ hạn</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p>Trạng thái</p>
+      </div>
+      <div class="khachhang__content__subtitle red">
+        <span>Total: </span><span>{{totalHopDong}}</span>
+      </div>
+    </div>
+    <div class="khachhang__content__filter">
+      <div class="khachhang__content__filter__item">
+        <input class="filter-input" type="number" [(ngModel)]="id" placeholder="Lọc theo mã">
+      </div>
+      <div class="khachhang__content__filter__item">
+        <input class="filter-input" type="text" [(ngModel)]="nguoithue" placeholder="Lọc người thuê">
+      </div>
+      <div class="khachhang__content__filter__item">
+        <input class="filter-input filter-padding" type="text" [(ngModel)]="songaythue" placeholder="Lọc số ngày thuê">
+      </div>
+      <div class="khachhang__content__filter__item">
+        <input class="filter-input filter-padding" type="date" [(ngModel)]="ngaygiaoxe" placeholder="Lọc ngày giao xe">
+      </div>
+      <div class="khachhang__content__filter__item">
+        <input class="filter-input filter-padding" type="date" [(ngModel)]="ngaytraxe" placeholder="Lọc ngày trả xe">
+      </div>
+      <div class="khachhang__content__filter__item">
+        <input class="filter-input" type="text" [(ngModel)]="gia" placeholder="Lọc giá">
+      </div>
+      <div class="khachhang__content__filter__item">
+        <select class="filter-select" [(ngModel)]="trehan">
+          <option value="*">Tất cả</option>
+          <option value="true">Trễ hạn</option>
+          <option value="false">Đúng hạn</option>
+        </select>
+      </div>
+      <div class="khachhang__content__filter__item">
+        <input class="filter-input" type="text" [(ngModel)]="phitrehan" placeholder="Lọc phí trễ hạn">
+      </div>
+      <div class="khachhang__content__filter__item">
+        <select class="filter-select" [(ngModel)]="trangthai">
+          <option value="*">Tất cả</option>
+          <option value="true">Đã thanh toán</option>
+          <option value="false">Chưa thanh toán</option>
+        </select>
+      </div>
+    </div>
+    <div class="khachhang__content__item"
+      *ngFor="let item of hopdong | slice: (curPage * pageSize) - pageSize :curPage * pageSize | hopdongPipe : id : nguoithue : songaythue : ngaygiaoxe : ngaytraxe : gia : trangthai : trehan : phitrehan">
+      <div class="khachhang__content__subitem">
+        <p>{{item.id}}</p>
+      </div>
+      <div class="khachhang__content__subitem">
+        <p>{{item.nguoithue}}</p>
+      </div>
+      <div class="khachhang__content__subitem">
+        <p>{{item.songaythue}}</p>
+      </div>
+      <div class="khachhang__content__subitem">
+        <p>{{item.ngaygiaoxe | date : "dd/MM/yyyy"}}</p>
+      </div>
+      <div class="khachhang__content__subitem">
+        <p>{{item.ngaytraxe | date : "dd/MM/yyyy"}}</p>
+      </div>
+      <div class="khachhang__content__subitem">
+        <p>{{item.gia | number: '1.0-3'}}</p>
+      </div>
+      <div class="khachhang__content__subitem" *ngIf="item.trehan === true">
+        <p>{{item.trehan | hdTrehanPipe}}</p>
+      </div>
+      <div class="khachhang__content__subitem" *ngIf="item.trehan === false">
+        <p>{{item.trehan | hdTrehanPipe}}</p>
+      </div>
+      <div class="khachhang__content__subitem">
+        <p>{{item.phitrehan}}</p>
+      </div>
+      <div class="khachhang__content__subitem" *ngIf="item.trangthai === true">
+        <p>{{item?.trangthai | hdTrangthaiPipe}}</p>
+      </div>
+      <div class="khachhang__content__subitem" *ngIf="item.trangthai === false">
+        <p>{{item?.trangthai | hdTrangthaiPipe}}</p>
+      </div>
+      <div class="khachhang__content__subitem flex">
+        <div class="khachhang__button__chucnang">
+          <button (click)="editHopDong(item.id)" type="button" class="btn btn-default bg-button" data-dismiss="modal">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="khachhang__button">
+    <button mat-raised-button color="warn" (click)="AddHopDong()">Thêm mới</button>
+  </div>
+  <div class="pagination">
+    <button class="pagination-button" [disabled]="curPage == 1" (click)="curPage = curPage - 1">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span class="pagination-flex">Page {{curPage}} of {{ numberOfPages() }}</span>
+    <button class="pagination-button" [disabled]="curPage >= hopdong.length/pageSize" (click)="curPage = curPage + 1">
+      <mat-icon>arrow_forward</mat-icon>
+    </button>
+
+  </div>
+</div>
+<!-- hiển thị dữ liệu, lát làm bộ lọc -->

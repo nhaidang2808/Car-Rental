@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators'
+import { Hopdong } from '../class/hopdong.model';
 import { KhachHang } from '../class/khach-hang.model';
 import { Xe } from '../class/xe.model';
 @Injectable({
@@ -24,6 +25,12 @@ export class ProductService {
     .get<any>(url,this.httpOptions)
     .pipe(catchError(this.handleError));
   }
+  getHopDong(): Observable<any> {
+    const url = `${this.REST_API_SERVER}/hopdongthue`;
+    return this.httpClient
+    .get<any>(url,this.httpOptions)
+    .pipe(catchError(this.handleError));
+  }
   getXe(): Observable<any> {
     const url = `${this.REST_API_SERVER}/xe`;
     return this.httpClient
@@ -33,6 +40,12 @@ export class ProductService {
 
   get1KhachHang(khachhangId:number) {
     const url = `${this.REST_API_SERVER}/khachhang/` + khachhangId;
+    return this.httpClient
+    .get<any>(url,this.httpOptions)
+    .pipe(catchError(this.handleError));
+  }
+  get1HopDong(hopdongId:number) {
+    const url = `${this.REST_API_SERVER}/hopdongthue/` + hopdongId;
     return this.httpClient
     .get<any>(url,this.httpOptions)
     .pipe(catchError(this.handleError));
@@ -49,6 +62,12 @@ export class ProductService {
     .post<any>(url, payload ,this.httpOptions)
     .pipe(catchError(this.handleError));
   }
+  postHopDong(payload: any): Observable<any> {
+    const url = `${this.REST_API_SERVER}/hopdongthue`;
+    return this.httpClient
+    .post<any>(url, payload ,this.httpOptions)
+    .pipe(catchError(this.handleError));
+  }
   postXe(payload: any): Observable<any> {
     const url = `${this.REST_API_SERVER}/xe`;
     return this.httpClient
@@ -61,7 +80,12 @@ export class ProductService {
     .get<any>(url,this.httpOptions)
     .pipe(catchError(this.handleError));
   }
-
+  getTotalHopDong():Observable<any> {
+    const url = `${this.REST_API_SERVER}/hopdongthue`;
+    return this.httpClient
+    .get<any>(url,this.httpOptions)
+    .pipe(catchError(this.handleError));
+  }
   getTotalXe():Observable<any> {
     const url = `${this.REST_API_SERVER}/xe`;
     return this.httpClient
@@ -74,6 +98,7 @@ export class ProductService {
     .delete<any>(url)
     .pipe(catchError(this.handleError));
   }
+
   delXe(xeId: number, tenxe: string){
     const url = `${this.REST_API_SERVER}/xe/` + xeId;
     return this.httpClient
@@ -90,6 +115,13 @@ export class ProductService {
   }
   modifyXe(xeId:number ,data: Xe) {
     const url = `${this.REST_API_SERVER}/xe/` + xeId;
+    return this.httpClient
+    .put<any>(url, data ,this.httpOptions)
+    .pipe(catchError(this.handleError));
+  }
+
+  modifyHopDong(hopdongId:number ,data: Hopdong) {
+    const url = `${this.REST_API_SERVER}/hopdongthue/` + hopdongId;
     return this.httpClient
     .put<any>(url, data ,this.httpOptions)
     .pipe(catchError(this.handleError));

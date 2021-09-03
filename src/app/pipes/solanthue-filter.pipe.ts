@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'solanthueFilter',
 })
 export class SolanthueFilterPipe implements PipeTransform {
-  transform(solanthue: any): any {
+  transform(trehan: any): any {
     // if(solanthue)
     // {
     //   // khachhang = khachhang.filter(x => {
@@ -14,11 +14,8 @@ export class SolanthueFilterPipe implements PipeTransform {
     //     return it.solanthue.toString().include(solanthue < 10);
     //   })
     // }
-    if(solanthue) {
-      return solanthue > 10
-    }
-    else{
-      return solanthue < 10
-    }
+    if(trehan)
+      return "Trễ hạn"
+    return "Đúng hạn"
   }
 }

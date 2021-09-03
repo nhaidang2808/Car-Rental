@@ -9,7 +9,6 @@ export class TinhtrangPipe implements PipeTransform {
     if(tinhtrang)
       return "Đang thuê"
     return "chưa thuê"
-
   }
 
 }

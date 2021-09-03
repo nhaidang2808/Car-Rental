@@ -37,6 +37,11 @@ import  {MatCurrencyFormatModule} from 'mat-currency-format';
 import { DateXePipe } from './pipes/date-xe.pipe';
 import { EditxeComponent } from './editxe/editxe.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { HopdongComponent } from './hopdong/hopdong.component';
+import { HopdongPipe } from './pipes/hopdong.pipe';
+import { HopdongTrehanPipe } from './pipes/hopdong-trehan.pipe';
+import { HopdongTrangthaiPipe } from './pipes/hopdong-trangthai.pipe';
+import { EdithopdongComponent } from './edithopdong/edithopdong.component';
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
@@ -58,6 +63,11 @@ import {MatDialogModule} from '@angular/material/dialog';
     AddXeComponent,
     DateXePipe,
     EditxeComponent,
+    HopdongComponent,
+    HopdongPipe,
+    HopdongTrehanPipe,
+    HopdongTrangthaiPipe,
+    EdithopdongComponent,
 
   ],
   imports: [
