@@ -13,11 +13,8 @@ export class AppComponent {
     //Add 'implements OnInit' to the class.
 
   }
-  isHomeRoute() {
-    return this.router.url === '/'
-  }
-  isTournamentRoute() {
-    return this.router.url.includes("/");
-}
+
   title = 'project1';
+
+
 }

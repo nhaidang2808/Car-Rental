@@ -42,6 +42,7 @@ export class AddKhachHangComponent implements OnInit {
     console.log(newKhachHang)
     this.serverHttp.postKhachHang(newKhachHang).subscribe(data => {
       console.log(data)
+      this.router.navigate(['khachhang'])
 
     })
   }

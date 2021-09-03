@@ -40,6 +40,7 @@ export class AddXeComponent implements OnInit {
     console.log(newXe)
     this.serverHttp.postXe(newXe).subscribe(data => {
       console.log(data)
+      this.router.navigate(['xe'])
     })
   }
 }

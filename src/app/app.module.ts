@@ -37,7 +37,6 @@ import  {MatCurrencyFormatModule} from 'mat-currency-format';
 import { DateXePipe } from './pipes/date-xe.pipe';
 import { EditxeComponent } from './editxe/editxe.component';
 import {MatDialogModule} from '@angular/material/dialog';
-
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
@@ -79,10 +78,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     Ng2SearchPipeModule,
     NgxPaginationModule,
     MatCurrencyFormatModule,
-    MatDialogModule
-
-
-
+    MatDialogModule,
   ],
   exports: [
     MatFormFieldModule,

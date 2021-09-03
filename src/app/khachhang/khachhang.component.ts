@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonService } from '../services/common.service';
 import { ProductService } from '../services/product.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-khachhang',
   templateUrl: './khachhang.component.html',
@@ -53,15 +53,59 @@ export class KhachhangComponent implements OnInit {
     this.router.navigate(['add-khachhang']);
   }
 
-  public delKhachHang(khachhangId: any) {
-    console.log('khachhang', khachhangId);
-    this.serverHttp.delKhachHang(khachhangId).subscribe((data) => {
-      console.log('delete', data);
-      this.loadData();
-    });
-  }
+  // public delKhachHang(khachhangId: any) {
+  //   console.log('khachhang', khachhangId);
+  //   this.serverHttp.delKhachHang(khachhangId).subscribe((data) => {
+  //     console.log('delete', data);
+  //     this.loadData();
+  //   });
+  // }
 
   public editKhachHang(khachhangId: any) {
     this.router.navigate(['edit-khachhang', khachhangId]);
+  }
+
+
+  opensweetalert(khachhangId: number, hoten:string) {
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+      },
+      buttonsStyling: true
+    })
+
+    swalWithBootstrapButtons.fire({
+      title: 'Bạn có chắc muốn xóa thông tin của khách hàng ' + hoten + ' ?',
+      text: "Thao tác này không thể hoàn tác",
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonText: 'Xác nhận xóa',
+      confirmButtonColor: '#7b2d2d',
+      cancelButtonColor: '#2b5443',
+      cancelButtonText: 'Hủy thao tác',
+
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        swalWithBootstrapButtons.fire(
+          'Đã xóa!',
+          'Thông tin của khách hàng ' + hoten +  ' đã được xóa',
+          'success'
+        )
+        this.serverHttp.delKhachHang(khachhangId, hoten).subscribe((data) => {
+          console.log('delete', data);
+          this.loadData();
+        });
+      } else if (
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+          'Đã hủy thao tác ',
+          'Thông tin khách hàng an toàn',
+          'error'
+        )
+      }
+    })
   }
 }

@@ -1,44 +1,53 @@
 {
   "khachhang": [
     {
-      "hoten": "le van b",
-      "solanthue": "23",
+      "hoten": "lê văn a",
+      "solanthue": "2",
+      "id": 1,
+      "sdt": "0123456789",
+      "diachi": "123/123",
+      "tinhtrang": "false",
+      "ngaysinh": "2003-02-19"
+    },
+    {
+      "hoten": "nguyen van b",
+      "solanthue": "2",
       "id": 2,
-      "sdt": 10111111111,
-      "diachi": "dxvxvxcv",
+      "sdt": "1231212312",
+      "diachi": "123/789",
       "tinhtrang": "false",
-      "ngaysinh": "1999-02-19"
-    },
-    {
-      "hoten": "ádadasd",
-      "solanthue": "2",
-      "id": 3,
-      "sdt": "123456789",
-      "diachi": "ádasdsdadasdasd",
-      "tinhtrang": "false",
-      "ngaysinh": "2001-02-06"
-    },
-    {
-      "hoten": "ádasda",
-      "solanthue": "2",
-      "id": 4,
-      "sdt": "000011111",
-      "diachi": "ádasdasdas",
-      "tinhtrang": "false",
-      "ngaysinh": "2001-03-13"
+      "ngaysinh": "2021-09-23"
     }
   ],
   "xe": [
     {
-      "id": 10,
-      "tenxe": "23123123",
-      "hang": "123123123",
-      "loaixe": "23123123",
-      "mau": "123123123",
-      "purchDate": "2021-09-04",
+      "id": 1,
+      "tenxe": "campy v5",
+      "hang": "Toyota",
+      "loaixe": "xe 4 chỗ",
+      "mau": "trắng",
+      "purchDate": "2021-09-16",
       "tinhtrang": "false",
-      "price_per_day": "1000",
-      "bienkiemsoat": "ABC-CDE"
+      "price_per_day": "1000000",
+      "bienkiemsoat": "VSB-ABC"
+    },
+    {
+      "id": 2,
+      "tenxe": "Mazda 4",
+      "hang": "Toyota",
+      "loaixe": "xe 7 chỗ",
+      "mau": "đen",
+      "purchDate": "2021-09-16",
+      "tinhtrang": "false",
+      "price_per_day": "2000000",
+      "bienkiemsoat": "GHS-QZA"
+    }
+  ],
+  "hopdongthue": [
+    {
+      "id": 1,
+      "ngaylap": "2021-09-17",
+      "nguoithue": "Lê Văn b"
     }
   ]
 }

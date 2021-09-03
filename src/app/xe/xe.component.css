@@ -120,11 +120,20 @@ input {
 }
 .bg-button {
   background-color: white !important;
-  padding: 8px 16px;
   border: none;
+  padding: 0;
+  margin: 3px 0 0 0;
+}
+.bg-button1 {
+  background-color: white !important;
+  border: none;
+  padding: 0px 0 3px 0
 }
 .bg-button:hover{
-  background-color: rgba(88, 87, 88, 0.411) !important;
+  background-color: white;
+}
+.bg-button1:hover{
+  background-color: white !important;
 }
 .center{
   text-align: center;
@@ -195,3 +204,7 @@ input {
   -webkit-appearance: none;
   display: none;
 } */
+button {
+  border: none;
+  background: white;
+}

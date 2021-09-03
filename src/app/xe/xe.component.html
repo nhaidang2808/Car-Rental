@@ -102,25 +102,7 @@
       </div>
       <div class="khachhang__content__subitem flex">
         <div class="khachhang__button__chucnang">
-          <button (click)="delXe(item.id)" type="button" class="btn btn-info btn-lg bg-button" data-toggle="modal" data-target="#myModal">
-            <mat-icon>delete</mat-icon>
-          </button>
-          <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-body">
-                  <p class="center">Xác nhận xóa xe <span class="darkred"> {{item.tenxe}}</span></p>
-                </div>
-                <div class="modal-footer Gia-modal">
-                  <button  type="button" class="btn btn-default width25" data-dismiss="modal"
-                    mat-raised-button color="warn">Xóa</button>
-                  <button type="button" class="btn btn-default width25" data-dismiss="modal" mat-stroked-button
-                    color="warn">Hủy</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
+          <button class="bg-button1" (click)="opensweetalert(item.id, item.tenxe)"><mat-icon>delete</mat-icon></button>
         </div>
         <div class="khachhang__button__chucnang">
           <button (click)="editXe(item.id)" type="button" class="btn btn-default bg-button" data-dismiss="modal">
