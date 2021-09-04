@@ -25,3 +25,8 @@
   width: 100%;
 
 }
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: transparent;
+  z-index: 1;
+  font-size: 25px;
+}

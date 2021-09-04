@@ -1,1 +1,59 @@
-<p>edithopdong works!</p>
+<div class="add-khachhang">
+  <div class="add-khachhang__title">
+    <p>CẬP NHẬT THÔNG TIN HỢP ĐỒNG </p>
+  </div>
+  <div class="add-khachhang__form">
+    <form [formGroup]="HopDongForm" class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Người thuê</mat-label>
+        <input formControlName="nguoithue" required matInput value="">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Số ngày thuê</mat-label>
+        <input type="text" formControlName="songaythue" required matInput placeholder="vd: 123456789" value="">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Ngày giao xe</mat-label>
+        <input type="date" formControlName="ngaygiaoxe" required matInput placeholder="vd: 123/123 đường xyz" value="">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Ngày trả xe</mat-label>
+        <input type="date" formControlName="ngaytraxe" required matInput placeholder="vd: 123/123 đường xyz" value="">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Giá</mat-label>
+        <input mvndrMatCurrencyFormat [allowNegative]="false" [currencyCode]="'VND'" [value]="usAmount"
+          (blur)="updateUSAmount($event)" type="text" formControlName="gia" required matInput
+          placeholder="vd: 123/123 đường xyz" value="">
+      </mat-form-field>
+      <div class="select-group">
+        <div class="select">
+          <select formControlName="trangthai" class="round">
+            <option value="true">Đã thanh toán</option>
+            <option value="false">Chưa thanh toán</option>
+          </select>
+        </div>
+        <div class="select">
+          <select formControlName="trehan" class="round">
+            <option value="true">Trễ hạn</option>
+            <option value="false">Đúng hạn</option>
+          </select>
+        </div>
+      </div>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Phí trễ hạn</mat-label>
+        <input mvndrMatCurrencyFormat [allowNegative]="false" [currencyCode]="'VND'" [value]="usAmountPhiTreHan"
+          (blur)="updateUSAmountPhiTreHan($event)" type="text" formControlName="phitrehan" required matInput
+          placeholder="vd: 123/123 đường xyz" value="">
+      </mat-form-field>
+
+
+      <button type="submit" (click)="saveAndGoList()" mat-raised-button color="primary" class="btn btn-default">Hoàn tất
+        chỉnh sửa</button>
+
+
+    </form>
+
+  </div>
+</div>
