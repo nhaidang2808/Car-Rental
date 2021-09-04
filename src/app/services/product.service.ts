@@ -113,6 +113,12 @@ export class ProductService {
     .put<any>(url, data ,this.httpOptions)
     .pipe(catchError(this.handleError));
   }
+  modify1thuoctinhkhachhang(khachhangId:number ,data: KhachHang) {
+    const url = `${this.REST_API_SERVER}/khachhang/` + khachhangId;
+    return this.httpClient
+    .put<any>(url, data ,this.httpOptions)
+    .pipe(catchError(this.handleError));
+  }
   modifyXe(xeId:number ,data: Xe) {
     const url = `${this.REST_API_SERVER}/xe/` + xeId;
     return this.httpClient

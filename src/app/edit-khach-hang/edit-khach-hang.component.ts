@@ -46,14 +46,14 @@ export class EditKhachHangComponent implements OnInit {
         }
       }
     });
+
   }
 
   private createNewData() {
     const newKhachHang: any = {};
     for (const controlHoten in this.KhachHangForm.controls) {
       if (controlHoten) {
-        newKhachHang[controlHoten] =
-          this.KhachHangForm.controls[controlHoten].value;
+        newKhachHang[controlHoten] = this.KhachHangForm.controls[controlHoten].value;
       }
     }
     return newKhachHang as KhachHang;

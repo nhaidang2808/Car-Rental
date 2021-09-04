@@ -12,13 +12,14 @@ export class KhachhangComponent implements OnInit {
   hoten:string = '';
   ngaysinh:string= "";
   solanthue: string = "";
-  id:string='';
+  id:any;
   sdt:string = '';
   tinhtrang:string = '*';
   diachi:string = "";
   public curPage: number = 0;
   public pageSize: number = 0;
   public khachhang: any[] = [];
+  public hopdong:any[] = [];
   public totalKhachHang = 0;
   constructor(
     private serverHttp: ProductService,
@@ -49,6 +50,8 @@ export class KhachhangComponent implements OnInit {
       })
     });
   }
+
+
   public AddKhachHang() {
     this.router.navigate(['add-khachhang']);
   }

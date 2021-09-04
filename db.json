@@ -6,7 +6,7 @@
       "id": 1,
       "sdt": "0123456789",
       "diachi": "123/123",
-      "tinhtrang": "true",
+      "tinhtrang": "false",
       "ngaysinh": "2003-02-19"
     },
     {
@@ -46,7 +46,7 @@
   "hopdongthue": [
     {
       "id": 1,
-      "nguoithue": "Lê Văn b",
+      "nguoithue": "lê văn a",
       "songaythue": "2 ngày",
       "ngaygiaoxe": "2021-09-17",
       "ngaytraxe": "2021-09-19",

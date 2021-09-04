@@ -11,7 +11,7 @@ import { ProductService } from '../services/product.service';
   styleUrls: ['./edithopdong.component.css']
 })
 export class EdithopdongComponent implements OnInit {
-
+  public songaythue:any;
   usAmount: any;
   usAmountPhiTreHan: any;
   public id = 0;
@@ -26,6 +26,7 @@ export class EdithopdongComponent implements OnInit {
     trehan: new FormControl(''),
     phitrehan: new FormControl(''),
   })
+
   constructor(
     private serverHttp: ProductService,
     private router: Router,
@@ -64,10 +65,12 @@ export class EdithopdongComponent implements OnInit {
       if (controlHopDong) {
         newHopDong[controlHopDong] =
           this.HopDongForm.controls[controlHopDong].value;
+
       }
     }
     return newHopDong as Hopdong;
   }
+
 
   public saveAndGoList() {
     if (this.id > 0) {

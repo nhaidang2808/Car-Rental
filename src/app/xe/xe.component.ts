@@ -11,7 +11,6 @@ import { Xe } from '../class/xe.model';
   styleUrls: ['./xe.component.css']
 })
 export class XeComponent implements OnInit {
-
   public bienkiemsoat:string = "";
   public id:string = "";
   public tenxe: string = "";
@@ -57,6 +56,8 @@ export class XeComponent implements OnInit {
       })
     });
   }
+
+
   public AddXe() {
     this.router.navigate(['add-xe']);
   }
