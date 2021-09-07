@@ -25,6 +25,7 @@ export class EdithopdongComponent implements OnInit {
     trehan: new FormControl(''),
     phitrehan: new FormControl(''),
     cccd: new FormControl(''),
+    bks_xethue: new FormControl(''),
   })
   constructor(
     private serverHttp: ProductService,

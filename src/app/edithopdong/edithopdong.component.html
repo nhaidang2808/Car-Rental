@@ -25,6 +25,10 @@
         <input type="date" formControlName="ngaytraxe" required matInput placeholder="vd: 123/123 đường xyz" value="">
       </mat-form-field>
       <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Xe thuê</mat-label>
+        <input formControlName="bks_xethue" required matInput value="">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Giá</mat-label>
         <input mvndrMatCurrencyFormat [allowNegative]="false" [currencyCode]="'VND'" [value]="usAmount"
           (blur)="updateUSAmount($event)" type="text" formControlName="gia" required matInput

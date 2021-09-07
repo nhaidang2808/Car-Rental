@@ -21,6 +21,7 @@ export class AddhopdongComponent implements OnInit {
     phitrehan: new FormControl(''),
     trangthai: new FormControl(''),
   })
+
   usAmount: any;
   usAmountPhiTreHan: any;
   id: any;

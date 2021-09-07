@@ -34,7 +34,6 @@ export class KhachhangComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
     this.loadData();
     this.serverHttp.getTotalKhachHang().subscribe((data) => {
       this.totalKhachHang = data.length;
@@ -44,7 +43,6 @@ export class KhachhangComponent implements OnInit {
     });
     this.curPage = 1;
     this.pageSize = 5;
-
   }
   numberOfPages() {
     return Math.ceil(this.khachhang.length / this.pageSize);

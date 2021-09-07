@@ -19,6 +19,7 @@ export class HopdongComponent implements OnInit {
   trehan: string = '*';
   phitrehan: string = '';
   cccd:string = "";
+  bks_xethue:string = "";
   public hopdong: any[] = [];
   public totalHopDong = 0;
   public curPage: number = 0;

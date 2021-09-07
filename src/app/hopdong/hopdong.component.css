@@ -34,7 +34,7 @@ p {
   padding: 15px 0;
 }
 .khachhang__content__subtitle {
-  width: Calc(100% / 11);
+  width: Calc(100% / 12);
   height: auto;
   text-align: center;
   padding: 10px 0;
@@ -45,7 +45,7 @@ p {
   display: flex;
 }
 .khachhang__content__filter__item {
-  width: Calc(100% / 11);
+  width: Calc(100% / 12);
   height: auto;
   text-align: center;
 }
@@ -62,7 +62,7 @@ p {
   display: flex;
 }
 .khachhang__content__subitem {
-  width: Calc(100% / 11);
+  width: Calc(100% / 12);
   height: auto;
   border-bottom: 1px solid rgba(0, 0, 0, 0.075);
   padding: 10px 0;

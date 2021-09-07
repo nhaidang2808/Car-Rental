@@ -23,6 +23,9 @@
         <p>Ngày trả xe</p>
       </div>
       <div class="khachhang__content__subtitle">
+        <p>Xe thuê</p>
+      </div>
+      <div class="khachhang__content__subtitle">
         <p>Giá</p>
       </div>
       <div class="khachhang__content__subtitle">
@@ -58,6 +61,9 @@
         <input class="filter-input filter-padding" type="date" [(ngModel)]="ngaytraxe" placeholder="Lọc ngày trả xe">
       </div>
       <div class="khachhang__content__filter__item">
+        <input class="filter-input" type="text" [(ngModel)]="bks_xethue" placeholder="Lọc theo BKS">
+      </div>
+      <div class="khachhang__content__filter__item">
         <input class="filter-input" type="text" [(ngModel)]="gia" placeholder="Lọc giá">
       </div>
       <div class="khachhang__content__filter__item">
@@ -79,7 +85,7 @@
       </div>
     </div>
     <div class="khachhang__content__item"
-      *ngFor="let item of hopdong | slice: (curPage * pageSize) - pageSize :curPage * pageSize | hopdongPipe : id : nguoithue : songaythue : ngaygiaoxe : ngaytraxe : gia : trangthai : trehan : phitrehan">
+      *ngFor="let item of hopdong | slice: (curPage * pageSize) - pageSize :curPage * pageSize | hopdongPipe : id : nguoithue : songaythue : ngaygiaoxe : ngaytraxe : gia : trangthai : trehan : phitrehan : cccd : bks_xethue">
       <div class="khachhang__content__subitem">
         <p>{{item.id}}</p>
       </div>
@@ -99,6 +105,9 @@
         <p>{{item.ngaytraxe | date : "dd/MM/yyyy"}}</p>
       </div>
       <div class="khachhang__content__subitem">
+        <p>{{item.bks_xethue}}</p>
+      </div>
+      <div class="khachhang__content__subitem">
         <p>{{item.gia | number: '1.0-3'}}</p>
       </div>
       <div class="khachhang__content__subitem" *ngIf="item.trehan === true">
@@ -108,7 +117,7 @@
         <p>{{item.trehan | hdTrehanPipe}}</p>
       </div>
       <div class="khachhang__content__subitem">
-        <p>{{item.phitrehan}}</p>
+        <p>{{item.phitrehan | number: '1.0-3'}}</p>
       </div>
       <div class="khachhang__content__subitem" *ngIf="item.trangthai === true">
         <p>{{item?.trangthai | hdTrangthaiPipe}}</p>

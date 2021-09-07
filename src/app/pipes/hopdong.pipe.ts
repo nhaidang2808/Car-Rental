@@ -14,7 +14,9 @@ export class HopdongPipe implements PipeTransform {
     gia: string,
     trangthai: any,
     trehan: any,
-    phitrehan: string
+    phitrehan: string,
+    cccd: string,
+    bks_xethue:string
   ): any {
     if (
       !id &&
@@ -25,7 +27,9 @@ export class HopdongPipe implements PipeTransform {
       !gia &&
       !trangthai &&
       !trehan &&
-      !phitrehan
+      !phitrehan &&
+      !cccd &&
+      !bks_xethue
     ) {
       return hopdong;
     } else {
@@ -84,6 +88,16 @@ export class HopdongPipe implements PipeTransform {
       if (nguoithue) {
         hopdong = hopdong.filter(x => {
           return x.nguoithue.toLowerCase().indexOf(nguoithue.toLowerCase()) != -1
+        })
+      }
+      if(cccd) {
+        hopdong = hopdong.filter((x) => {
+          return x.cccd.toString().indexOf(cccd) != -1;
+        });
+      }
+      if(bks_xethue) {
+        hopdong = hopdong.filter(x => {
+          return x.bks_xethue.toLowerCase().indexOf(bks_xethue.toLowerCase()) != -1
         })
       }
     }

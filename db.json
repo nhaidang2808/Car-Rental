@@ -8,7 +8,7 @@
       "diachi": "ádadas",
       "tinhtrang": "true",
       "ngaysinh": "1999-12-12",
-      "cccd": 45789458723
+      "cccd": "45789458723"
     },
     {
       "hoten": "nguyen van b",
@@ -18,7 +18,7 @@
       "diachi": "ádasdqasd",
       "tinhtrang": "true",
       "ngaysinh": "1999-12-20",
-      "cccd": 45789458722
+      "cccd": "45789458722"
     },
     {
       "hoten": "asdasdasd",
@@ -50,7 +50,7 @@
       "loaixe": "xe 7 chỗ",
       "mau": "đen",
       "purchDate": "2021-09-16",
-      "tinhtrang": "true",
+      "tinhtrang": "false",
       "price_per_day": "2000000",
       "bienkiemsoat": "GHS-QZA"
     }
@@ -66,7 +66,8 @@
       "trangthai": "true",
       "trehan": "false",
       "phitrehan": "0",
-      "cccd": "045789458722"
+      "cccd": "045789458722",
+      "bks_xethue": "ABC-DEFD"
     },
     {
       "id": 3,
@@ -78,7 +79,8 @@
       "trangthai": "true",
       "trehan": "false",
       "phitrehan": "0",
-      "cccd": "045789458721"
+      "cccd": "045789458721",
+      "bks_xethue": "ABC-DEFC"
     },
     {
       "id": 4,
@@ -90,7 +92,8 @@
       "trangthai": "true",
       "trehan": "false",
       "phitrehan": "0",
-      "cccd": "045789458723"
+      "cccd": "045789458723",
+      "bks_xethue": "ABC-DEFB"
     },
     {
       "id": 5,
@@ -99,10 +102,11 @@
       "ngaygiaoxe": "2021-12-20",
       "ngaytraxe": "2021-12-23",
       "gia": "3000000",
+      "trangthai": "true",
       "trehan": "true",
       "phitrehan": "5000000",
-      "trangthai": "true",
-      "cccd": "045789458724"
+      "cccd": "045789458724",
+      "bks_xethue": "GHS-QZA"
     }
   ],
   "user": [

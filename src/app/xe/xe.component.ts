@@ -52,29 +52,35 @@ export class XeComponent implements OnInit {
       console.log('xe', data);
       this.xe = data;
       this.xe.map((e) => {
-        e.tinhtrang == "true" ? e.tinhtrang = true : e.tinhtrang = false
-      })
-    });
+        e.tinhtrang == "true" ? (e.tinhtrang = true) : (e.tinhtrang = false);
+      });
+    })
+    this.serverHttp.getXe().subscribe((a) => {
+      for(let i = 0; i < a.length; i ++){
+        this.serverHttp.getHopDong().subscribe((b) =>{
+          for(let j = 0; j < b.length; j++) {
+            if(a[i].bienkiemsoat == b[j].bks_xethue) {
+              this.httpClient.patch('http://localhost:3000/xe/' + a[i].id,{"tinhtrang": "false"}).subscribe(data => {
+                console.log("PUT request is successful", data);
+              },
+              error => {
+                console.log("error", error)
+              })
+            }
+            else{
+              console.log("234")
+            }
+          }
+        })
+      }
+    })
   }
-
-
   public AddXe() {
     this.router.navigate(['add-xe']);
   }
-
-  // public delXe(xeId: number) {
-  //   console.log('xe', xeId);
-  //   this.serverHttp.delXe(xeId).subscribe((data) => {
-  //     console.log('delete', data);
-  //     this.loadData();
-  //   });
-
-  // }
   public editXe(xeId: any) {
     this.router.navigate(['edit-xe', xeId]);
   }
-
-
   opensweetalert(xeId: number, tenxe:string) {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
@@ -83,7 +89,6 @@ export class XeComponent implements OnInit {
       },
       buttonsStyling: true
     })
-
     swalWithBootstrapButtons.fire({
       title: 'Bạn có chắc muốn xóa thông tin của xe ' + tenxe + ' ?',
       text: "Thao tác này không thể hoàn tác",
@@ -93,7 +98,6 @@ export class XeComponent implements OnInit {
       confirmButtonColor: '#7b2d2d',
       cancelButtonColor: '#2b5443',
       cancelButtonText: 'Hủy thao tác',
-
       reverseButtons: true
     }).then((result) => {
       if (result.isConfirmed) {

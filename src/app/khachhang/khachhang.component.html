@@ -65,7 +65,7 @@
       </div>
     </div>
     <div class="khachhang__content__item"
-      *ngFor="let item of khachhang | slice: (curPage * pageSize) - pageSize :curPage * pageSize | filterKhachHang : hoten : id : solanthue : sdt : tinhtrang : diachi : ngaysinh">
+      *ngFor="let item of khachhang | slice: (curPage * pageSize) - pageSize :curPage * pageSize | filterKhachHang : hoten : id : solanthue : sdt : tinhtrang : diachi : ngaysinh : cccd">
       <div class="khachhang__content__subitem">
         <p>{{item?.id}}</p>
       </div>
