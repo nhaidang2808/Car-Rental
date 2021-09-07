@@ -29,7 +29,6 @@ export class KhachhangComponent implements OnInit {
   constructor(
     private serverHttp: ProductService,
     private router: Router,
-    private common: CommonService,
     private http: HttpClient
   ) {}
 

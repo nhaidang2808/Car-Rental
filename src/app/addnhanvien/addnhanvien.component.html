@@ -1,0 +1,65 @@
+<div class="add-khachhang">
+  <div class="add-khachhang__title">
+    <p>THÊM MỚI KHÁCH HÀNG</p>
+  </div>
+  <div class="add-khachhang__form">
+    <form [formGroup]="KhachHangForm" (ngSubmit)="onSubmit()" class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Họ Tên nhân viên</mat-label>
+        <input formControlName="hoten" required matInput placeholder="vd: Lê Văn A" value="">
+        <span *ngIf="KhachHangForm.controls.hoten.invalid">
+          *Cần nhập họ tên nhân viên
+        </span>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Căn cước công dân</mat-label>
+        <input formControlName="cccd" required matInput placeholder="vd: 045099000024" value="">
+        <span *ngIf="KhachHangForm.controls.cccd.invalid">
+          *Cần nhập căn cước công dân
+        </span>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Địa chỉ</mat-label>
+        <input formControlName="diachi" required matInput placeholder="vd: 123/343 đường xyz" value="">
+        <span *ngIf="KhachHangForm.controls.diachi.invalid">
+          *Cần nhập địa chỉ
+        </span>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Ngày sinh</mat-label>
+        <input type="date" formControlName="ngaysinh" required matInput placeholder="vd: 21/2/2021" value="">
+        <span *ngIf="KhachHangForm.controls.ngaysinh.invalid">
+          *Cần nhập ngày sinh
+        </span>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Số điện thoại</mat-label>
+        <input type="number" formControlName="sdt" required matInput placeholder="vd: 0123456789" value="">
+        <span *ngIf="KhachHangForm.controls.sdt.invalid">
+          *Cần nhập sdt
+        </span>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Chức vụ</mat-label>
+        <input formControlName="chucvu" required matInput placeholder="vd: Nhân viên" value="">
+        <span *ngIf="KhachHangForm.controls.chucvu.invalid">
+          *Cần nhập chức vụ
+        </span>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Ngày nhận việc</mat-label>
+        <input type="date" formControlName="ngaynhanviec" required matInput placeholder="vd: 21/2/2021" value="">
+        <span *ngIf="KhachHangForm.controls.ngaynhanviec.invalid">
+          *Cần nhập ngày nhận việc
+        </span>
+      </mat-form-field>
+      <div class="zone-button">
+        <button type="submit" [disabled]="!KhachHangForm.valid" mat-raised-button color="primary"
+          class="btn btn-default add-button">Hoàn tất</button>
+      </div>
+
+
+    </form>
+
+  </div>
+</div>

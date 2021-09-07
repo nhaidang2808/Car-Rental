@@ -1,0 +1,41 @@
+<div class="add-khachhang">
+  <div class="add-khachhang__title">
+    <p>CẬP NHẬT THÔNG TIN NHÂN VIÊN</p>
+  </div>
+  <div class="add-khachhang__form">
+    <form [formGroup]="KhachHangForm" class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Họ Tên nhân viên</mat-label>
+        <input formControlName="hoten" required matInput placeholder="vd: Lê Văn A" value="">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Căn cước công dân</mat-label>
+        <input type="number" formControlName="cccd" required matInput placeholder="045484518181" value="">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Địa chỉ</mat-label>
+        <input type="text" formControlName="diachi" required matInput placeholder="vd: 123/123 đường xyz" value="">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Ngày sinh (MM/dd/yyyy)</mat-label>
+        <input type="date" formControlName="ngaysinh" required matInput placeholder="MM/dd/YYYY" value="">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Số điện thoại</mat-label>
+        <input type="number" formControlName="sdt" required matInput placeholder="vd: 123456789" value="">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Chức vụ</mat-label>
+        <input formControlName="chucvu" required matInput placeholder="vd: nhân viên" value="">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Ngày nhận việc (MM/dd/yyyy)</mat-label>
+        <input type="date" formControlName="ngaynhanviec" required matInput placeholder="MM/dd/YYYY" value="">
+      </mat-form-field>
+    <button type="submit" (click)="saveAndGoList()"  mat-raised-button color="primary" class="btn btn-default">Hoàn tất chỉnh sửa</button>
+
+
+    </form>
+
+  </div>
+</div>

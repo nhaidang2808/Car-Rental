@@ -9,7 +9,7 @@ import  { Xe } from '../class/xe.model'
   styleUrls: ['./add-xe.component.css']
 })
 export class AddXeComponent implements OnInit {
-
+    public hangxe:any[] = [];
   public XeForm = new FormGroup({
     id: new FormControl(''),
     tenxe: new FormControl(''),
@@ -29,6 +29,7 @@ export class AddXeComponent implements OnInit {
   ) { }
   updateUSAmount(event:any) { this.usAmount = event.target.value; }
   ngOnInit(): void {
+    this.loaddata();
   }
   public onSubmit() {
     const newXe: any = {};
@@ -41,6 +42,11 @@ export class AddXeComponent implements OnInit {
     this.serverHttp.postXe(newXe).subscribe(data => {
       console.log(data)
       this.router.navigate(['xe'])
+    })
+  }
+  private loaddata() {
+    this.serverHttp.getHangXe().subscribe((dataXe) => {
+      this.hangxe = dataXe;
     })
   }
 }

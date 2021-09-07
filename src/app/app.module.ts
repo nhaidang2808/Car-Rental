@@ -45,6 +45,11 @@ import { EdithopdongComponent } from './edithopdong/edithopdong.component';
 import { AddhopdongComponent } from './addhopdong/addhopdong.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
+import { HangxeComponent } from './hangxe/hangxe.component';
+import { AddhangxeComponent } from './addhangxe/addhangxe.component';
+import { NhanvienComponent } from './nhanvien/nhanvien.component';
+import { EditnhanvienComponent } from './editnhanvien/editnhanvien.component';
+import { AddnhanvienComponent } from './addnhanvien/addnhanvien.component';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -73,6 +78,11 @@ import { MatCardModule } from '@angular/material/card';
     HopdongTrangthaiPipe,
     EdithopdongComponent,
     AddhopdongComponent,
+    HangxeComponent,
+    AddhangxeComponent,
+    NhanvienComponent,
+    EditnhanvienComponent,
+    AddnhanvienComponent,
 
 
   ],

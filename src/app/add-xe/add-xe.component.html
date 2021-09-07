@@ -4,6 +4,14 @@
   </div>
   <div class="add-khachhang__form">
     <form [formGroup]="XeForm" (ngSubmit)="onSubmit()" class="example-form">
+      <div class="select-group">
+        <div class="select">
+          <select formControlName="hang" class="round">
+            <option value="" selected disabled hidden>Chọn hãng xe</option>
+            <option *ngFor="let item of hangxe" [ngValue]="item.tenhang">{{item.tenhang}}</option>
+          </select>
+        </div>
+      </div>
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Tên xe</mat-label>
         <input formControlName="tenxe" required matInput placeholder="vd: toyota" value="">
@@ -11,13 +19,7 @@
           *Cần nhập tên xe
         </span>
       </mat-form-field>
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Hãng</mat-label>
-        <input formControlName="hang" required matInput placeholder="vd: toyota" value="">
-        <span *ngIf="XeForm.controls.hang.invalid">
-          *Cần nhập hãng
-        </span>
-      </mat-form-field>
+
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Loại xe</mat-label>
         <input formControlName="loaixe" required matInput placeholder="vd: xe 4 chỗ" value="">

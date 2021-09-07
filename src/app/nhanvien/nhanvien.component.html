@@ -1,0 +1,90 @@
+<div class="khachhang" >
+  <div class="khachhang__title">
+    <p>Danh Sách Nhân Viên</p>
+  </div>
+  <div class="khachhang__content">
+    <div class="khachhang__content__title">
+      <div class="khachhang__content__subtitle">
+        <p>Mã nhân viên</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p>Họ tên</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p>Căn cước</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p>Địa chỉ</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p>Ngày sinh</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p>Số điện thoại</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p>Chức vụ</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p>Ngày nhận việc</p>
+      </div>
+      <!-- <div class="khachhang__content__subtitle">
+        <p> Tình trạng</p>
+      </div> -->
+      <div class="khachhang__content__subtitle red">
+        <span>Total: </span><span>{{totalNhanVien}}</span>
+
+      </div>
+    </div>
+    <div class="khachhang__content__item"
+      *ngFor="let item of nhanvien | slice: (curPage * pageSize) - pageSize :curPage * pageSize">
+      <div class="khachhang__content__subitem">
+        <p>{{item?.id}}</p>
+      </div>
+      <div class="khachhang__content__subitem">
+        <p>{{item?.hoten}}</p>
+      </div>
+      <div class="khachhang__content__subitem">
+        <p>{{item?.cccd}}</p>
+      </div>
+      <div class="khachhang__content__subitem size-10">
+        <textarea readonly class="subitem-textarea" name="" id="" cols="100%" rows="1">{{item?.diachi}}</textarea>
+      </div>
+      <div class="khachhang__content__subitem">
+        <p>{{item?.ngaysinh | date : "dd/MM/yyyy"}}</p>
+      </div>
+      <div class="khachhang__content__subitem">
+        <p>{{item?.sdt}}</p>
+      </div>
+      <div class="khachhang__content__subitem">
+        <p>{{item?.chucvu}}</p>
+      </div>
+      <div class="khachhang__content__subitem">
+        <p>{{item?.ngaynhanviec | date : "dd/MM/yyyy"}}</p>
+      </div>
+      <div class="khachhang__content__subitem flex">
+        <div class="khachhang__button__chucnang">
+          <button class="bg-button1" (click)="opensweetalert(item.id, item.hoten)"><mat-icon>delete</mat-icon></button>
+        </div>
+        <div class="khachhang__button__chucnang">
+          <button (click)="editNhanVien(item.id)" type="button" class="btn btn-default bg-button" data-dismiss="modal">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="khachhang__button">
+      <button mat-raised-button color="warn" (click)="AddNhanVien()">Thêm mới</button>
+  </div>
+  <div class="pagination">
+    <button class="pagination-button" [disabled]="curPage == 1" (click)="curPage = curPage - 1">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span class="pagination-flex">Page {{curPage}} of {{ numberOfPages() }}</span>
+    <button class="pagination-button" [disabled]="curPage >= nhanvien.length/pageSize" (click)="curPage = curPage + 1">
+      <mat-icon>arrow_forward</mat-icon>
+    </button>
+  </div>
+</div>
+

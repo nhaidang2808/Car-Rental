@@ -7,8 +7,8 @@ export class HopdongTrangthaiPipe implements PipeTransform {
 
   transform(trangthai:any):any {
     if(trangthai)
-      return "Đã thanh toán"
-    return "Chưa thanh toán"
+      return "Đã trả"
+    return "Chưa trả"
   }
 
 }

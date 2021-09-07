@@ -5,6 +5,7 @@ import { catchError, map, tap } from 'rxjs/operators'
 import { Hopdong } from '../class/hopdong.model';
 import { KhachHang } from '../class/khach-hang.model';
 import { Xe } from '../class/xe.model';
+import { Nhanvien } from '../class/nhanvien.model'
 @Injectable({
   providedIn: 'root'
 })
@@ -30,6 +31,12 @@ export class ProductService {
     .get<any>(url,this.httpOptions)
     .pipe(catchError(this.handleError));
   }
+  getNhanVien(): Observable<any> {
+    const url = `${this.REST_API_SERVER}/nhanvien`;
+    return this.httpClient
+    .get<any>(url,this.httpOptions)
+    .pipe(catchError(this.handleError));
+  }
   getHopDong(): Observable<any> {
     const url = `${this.REST_API_SERVER}/hopdongthue`;
     return this.httpClient
@@ -42,9 +49,20 @@ export class ProductService {
     .get<any>(url,this.httpOptions)
     .pipe(catchError(this.handleError));
   }
-
+  getHangXe(): Observable<any> {
+    const url = `${this.REST_API_SERVER}/hangxe`;
+    return this.httpClient
+    .get<any>(url,this.httpOptions)
+    .pipe(catchError(this.handleError));
+  }
   get1KhachHang(khachhangId:number) {
     const url = `${this.REST_API_SERVER}/khachhang/` + khachhangId;
+    return this.httpClient
+    .get<any>(url,this.httpOptions)
+    .pipe(catchError(this.handleError));
+  }
+  get1NhanVien(nhanvienId:number) {
+    const url = `${this.REST_API_SERVER}/nhanvien/` + nhanvienId;
     return this.httpClient
     .get<any>(url,this.httpOptions)
     .pipe(catchError(this.handleError));
@@ -67,6 +85,18 @@ export class ProductService {
     .post<any>(url, payload ,this.httpOptions)
     .pipe(catchError(this.handleError));
   }
+  postNhanVien(payload: any): Observable<any> {
+    const url = `${this.REST_API_SERVER}/nhanvien`;
+    return this.httpClient
+    .post<any>(url, payload ,this.httpOptions)
+    .pipe(catchError(this.handleError));
+  }
+  postHangXe(payload: any): Observable<any> {
+    const url = `${this.REST_API_SERVER}/hangxe`;
+    return this.httpClient
+    .post<any>(url, payload ,this.httpOptions)
+    .pipe(catchError(this.handleError));
+  }
   postHopDong(payload: any): Observable<any> {
     const url = `${this.REST_API_SERVER}/hopdongthue`;
     return this.httpClient
@@ -85,6 +115,12 @@ export class ProductService {
     .get<any>(url,this.httpOptions)
     .pipe(catchError(this.handleError));
   }
+  getTotalNhanVien():Observable<any> {
+    const url = `${this.REST_API_SERVER}/nhanvien`;
+    return this.httpClient
+    .get<any>(url,this.httpOptions)
+    .pipe(catchError(this.handleError));
+  }
   getTotalHopDong():Observable<any> {
     const url = `${this.REST_API_SERVER}/hopdongthue`;
     return this.httpClient
@@ -97,20 +133,36 @@ export class ProductService {
     .get<any>(url,this.httpOptions)
     .pipe(catchError(this.handleError));
   }
+  getTotalHangXe():Observable<any> {
+    const url = `${this.REST_API_SERVER}/hangxe`;
+    return this.httpClient
+    .get<any>(url,this.httpOptions)
+    .pipe(catchError(this.handleError));
+  }
   delKhachHang(khachhangId: number, hoten: string){
     const url = `${this.REST_API_SERVER}/khachhang/` + khachhangId;
     return this.httpClient
     .delete<any>(url)
     .pipe(catchError(this.handleError));
   }
-
+  delNhanVien(nhanvienId: number, hoten: string){
+    const url = `${this.REST_API_SERVER}/nhanvien/` + nhanvienId;
+    return this.httpClient
+    .delete<any>(url)
+    .pipe(catchError(this.handleError));
+  }
   delXe(xeId: number, tenxe: string){
     const url = `${this.REST_API_SERVER}/xe/` + xeId;
     return this.httpClient
     .delete<any>(url)
     .pipe(catchError(this.handleError));
   }
-
+  delHangXe(hangxeId: number, tenhang: string){
+    const url = `${this.REST_API_SERVER}/hangxe/` + hangxeId;
+    return this.httpClient
+    .delete<any>(url)
+    .pipe(catchError(this.handleError));
+  }
 /// ddang lam update khach hang
   modifyKhachHang(khachhangId:number ,data: KhachHang) {
     const url = `${this.REST_API_SERVER}/khachhang/` + khachhangId;
@@ -118,8 +170,8 @@ export class ProductService {
     .put<any>(url, data ,this.httpOptions)
     .pipe(catchError(this.handleError));
   }
-  modify1thuoctinhkhachhang(khachhangId:number ,data: KhachHang) {
-    const url = `${this.REST_API_SERVER}/khachhang/` + khachhangId;
+  modifyNhanVien(nhanvienId:number ,data: Nhanvien) {
+    const url = `${this.REST_API_SERVER}/nhanvien/` + nhanvienId;
     return this.httpClient
     .put<any>(url, data ,this.httpOptions)
     .pipe(catchError(this.handleError));

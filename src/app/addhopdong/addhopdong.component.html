@@ -4,13 +4,26 @@
   </div>
   <div class="add-khachhang__form">
     <form [formGroup]="HopDongForm" (ngSubmit)="onSubmit()" class="example-form">
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Người thuê</mat-label>
-        <input formControlName="nguoithue" required matInput placeholder="vd: le van c" value="">
-        <span *ngIf="HopDongForm.controls.nguoithue.invalid">
-          *Cần nhập tên người thuê
-        </span>
-      </mat-form-field>
+      <div class="select-group">
+        <div class="select">
+          <select formControlName="nguoithue" class="round">
+            <option value="" selected disabled hidden>Chọn khách hàng</option>
+            <option *ngFor="let item of khachhang" [ngValue]="item.hoten">{{item.hoten}}</option>
+          </select>
+        </div>
+        <div class="select">
+          <select formControlName="cccd" class="round">
+            <option value="" selected disabled hidden>Chọn cccd của khách hàng</option>
+            <option *ngFor="let item of khachhang" [ngValue]="item.cccd">{{item.hoten}}</option>
+          </select>
+        </div>
+        <div class="select">
+          <select formControlName="bks_xethue" class="round">
+            <option value="" selected disabled hidden>Chọn xe khách hàng thuê</option>
+            <option *ngFor="let item of xe" [ngValue]="item.bienkiemsoat">{{item.tenxe}}</option>
+          </select>
+        </div>
+      </div>
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Số ngày thuê</mat-label>
         <input formControlName="songaythue" required matInput placeholder="vd: 2 ngày" value="">

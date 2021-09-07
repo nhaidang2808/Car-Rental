@@ -9,8 +9,11 @@ mat-card {
 .full-width-input {
   width: 100%;
 }
-.title{
+.title {
   text-transform: uppercase;
   font-weight: bolder;
   font-size: 20px;
+}
+button.mat-focus-indicator.login-button.mat-raised-button.mat-button-base.mat-primary {
+  padding: 0 40px;
 }

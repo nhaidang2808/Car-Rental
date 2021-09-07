@@ -1,32 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { CommonService } from '../services/common.service';
 import { ProductService } from '../services/product.service';
-import { KhachHang } from '../class/khach-hang.model';
+import { Nhanvien } from '../class/nhanvien.model'
 @Component({
-  selector: 'app-edit-khach-hang',
-  templateUrl: './edit-khach-hang.component.html',
-  styleUrls: ['./edit-khach-hang.component.css'],
+  selector: 'app-editnhanvien',
+  templateUrl: './editnhanvien.component.html',
+  styleUrls: ['./editnhanvien.component.css']
 })
-export class EditKhachHangComponent implements OnInit {
+export class EditnhanvienComponent implements OnInit {
   public id = 0;
   public KhachHangForm = new FormGroup({
     hoten: new FormControl(''),
-    solanthue: new FormControl(''),
-    id: new FormControl(''),
     sdt: new FormControl(''),
     diachi: new FormControl(''),
-    tinhtrang: new FormControl(''),
     ngaysinh: new FormControl(''),
     cccd: new FormControl(''),
+    ngaynhanviec: new FormControl(''),
+    chucvu: new FormControl(''),
   });
   constructor(
     private serverHttp: ProductService,
     private router: Router,
-    private common: CommonService,
     private route: ActivatedRoute
-  ) {}
+  ) { }
   ngOnInit(): void {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
     if (this.id > 0) {
@@ -35,8 +33,8 @@ export class EditKhachHangComponent implements OnInit {
   }
   private loadData(id: any) {
     console.log('load data', id);
-    this.serverHttp.get1KhachHang(id).subscribe((data) => {
-      console.log('get 1 khachhang', data);
+    this.serverHttp.get1NhanVien(id).subscribe((data) => {
+      console.log('get 1 nhanvien', data);
       for (const controlHoten in this.KhachHangForm.controls) {
         if (controlHoten) {
           this.KhachHangForm.controls[controlHoten].setValue(
@@ -53,14 +51,14 @@ export class EditKhachHangComponent implements OnInit {
         newKhachHang[controlHoten] = this.KhachHangForm.controls[controlHoten].value;
       }
     }
-    return newKhachHang as KhachHang;
+    return newKhachHang as Nhanvien;
   }
   public saveAndGoList() {
     if (this.id > 0) {
       this.serverHttp
-        .modifyKhachHang(this.id, this.createNewData())
+        .modifyNhanVien(this.id, this.createNewData())
         .subscribe((data) => {
-          this.router.navigate(['khachhang']);
+          this.router.navigate(['nhanvien']);
         });
     }
   }

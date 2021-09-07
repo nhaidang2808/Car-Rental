@@ -1,26 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProductService } from '../services/product.service';
 @Component({
-  selector: 'app-add-khach-hang',
-  templateUrl: './add-khach-hang.component.html',
-  styleUrls: ['./add-khach-hang.component.css']
+  selector: 'app-addnhanvien',
+  templateUrl: './addnhanvien.component.html',
+  styleUrls: ['./addnhanvien.component.css']
 })
-export class AddKhachHangComponent implements OnInit {
+export class AddnhanvienComponent implements OnInit {
   public KhachHangForm = new FormGroup({
     hoten: new FormControl(''),
-    solanthue: new FormControl(''),
-    id: new FormControl(''),
     sdt: new FormControl(''),
     diachi: new FormControl(''),
-    tinhtrang: new FormControl(),
     ngaysinh: new FormControl(''),
-    cccd:new FormControl(''),
-  })
+    cccd: new FormControl(''),
+    ngaynhanviec: new FormControl(''),
+    chucvu: new FormControl(''),
+  });
   constructor(
     private serverHttp: ProductService,
-    private router: Router,) { }
+    private router: Router,
+  ) { }
   ngOnInit(): void {}
   public onSubmit() {
     console.log('onsubmit');
@@ -31,9 +31,9 @@ export class AddKhachHangComponent implements OnInit {
       }
     }
     console.log(newKhachHang)
-    this.serverHttp.postKhachHang(newKhachHang).subscribe(data => {
+    this.serverHttp.postNhanVien(newKhachHang).subscribe(data => {
       console.log(data)
-      this.router.navigate(['khachhang'])
+      this.router.navigate(['nhanvien'])
     })
   }
 }

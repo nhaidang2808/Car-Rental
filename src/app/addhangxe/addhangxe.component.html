@@ -1,0 +1,17 @@
+<div class="add-khachhang">
+  <div class="add-khachhang__title">
+    <p>THÊM MỚI HÃNG XE</p>
+  </div>
+  <div class="add-khachhang__form">
+    <form [formGroup]="KhachHangForm" (ngSubmit)="onSubmit()" class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Nhập tên hãng xe</mat-label>
+        <input formControlName="tenhang" required matInput placeholder="Toyota" value="">
+        <span *ngIf="KhachHangForm.controls.tenhang.invalid">
+          *Cần nhập tên hãng xe
+        </span>
+      </mat-form-field>
+    <button type="submit" [disabled]="!KhachHangForm.valid" mat-raised-button color="primary" class="btn btn-default">Hoàn tất</button>
+    </form>
+  </div>
+</div>

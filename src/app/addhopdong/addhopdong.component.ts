@@ -20,8 +20,11 @@ export class AddhopdongComponent implements OnInit {
     trehan: new FormControl(''),
     phitrehan: new FormControl(''),
     trangthai: new FormControl(''),
+    bks_xethue: new FormControl(''),
+    cccd: new FormControl(''),
   })
-
+  public khachhang:any[] = [];
+  public xe:any[] = [];
   usAmount: any;
   usAmountPhiTreHan: any;
   id: any;
@@ -34,7 +37,20 @@ export class AddhopdongComponent implements OnInit {
   updateUSAmountPhiTreHan(eventPhiTreHan:any) { this.usAmountPhiTreHan = eventPhiTreHan.target.value; }
 
   ngOnInit(): void {
-
+    this.loaddataKH();
+    this.loaddataXe();
+  }
+  private loaddataKH () {
+    this.serverHttp.getKhachHang().subscribe((dataKH => {
+      this.khachhang = dataKH;
+      console.log("data kh", dataKH)
+    }))
+  }
+  private loaddataXe() {
+    this.serverHttp.getXe().subscribe((dataXe => {
+      this.xe = dataXe;
+      console.log("data xe", dataXe)
+    }))
   }
   public onSubmit() {
     const newHopDong: any = {};

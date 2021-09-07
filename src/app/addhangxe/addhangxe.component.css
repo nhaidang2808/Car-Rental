@@ -1,0 +1,32 @@
+.add-khachhang{
+  width: 100%;
+  height: auto;
+}
+.add-khachhang__title{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bolder;
+  padding: 20px 0;
+}
+.add-khachhang__form{
+  width: 80%;
+  height: auto;
+  margin: auto;
+  font-size: 20px;
+}
+.example-form {
+  max-width: 100%;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: transparent;
+  z-index: 1;
+  font-size: 25px;
+}

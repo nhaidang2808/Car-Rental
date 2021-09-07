@@ -1,0 +1,50 @@
+<div class="khachhang" >
+  <div class="khachhang__title">
+    <p>Danh Sách Hãng Xe</p>
+  </div>
+  <div class="khachhang__content">
+    <div class="khachhang__content__title">
+      <div class="khachhang__content__subtitle">
+        <p>Mã hãng xe</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p>Tên hãng</p>
+      </div>
+      <div class="khachhang__content__subtitle red">
+        <span>Total: </span><span>{{totalHangXe}}</span>
+
+      </div>
+    </div>
+    <div class="khachhang__content__item"
+      *ngFor="let item of hangxe | slice: (curPage * pageSize) - pageSize :curPage * pageSize">
+      <div class="khachhang__content__subitem">
+        <p>{{item?.id}}</p>
+      </div>
+      <div class="khachhang__content__subitem">
+        <p>{{item?.tenhang}}</p>
+      </div>
+
+      <div class="khachhang__content__subitem flex">
+        <div class="khachhang__button__chucnang">
+          <button class="bg-button1" (click)="opensweetalert(item.id, item.tenhang)"><mat-icon>delete</mat-icon></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="khachhang__button">
+
+      <button mat-raised-button color="warn" (click)="AddHangXe()">Thêm mới</button>
+
+  </div>
+  <div class="pagination">
+    <button class="pagination-button" [disabled]="curPage == 1" (click)="curPage = curPage - 1">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span class="pagination-flex">Page {{curPage}} of {{ numberOfPages() }}</span>
+    <button class="pagination-button" [disabled]="curPage >= hangxe.length/pageSize" (click)="curPage = curPage + 1">
+      <mat-icon>arrow_forward</mat-icon>
+    </button>
+
+  </div>
+</div>
+

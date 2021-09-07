@@ -2,13 +2,18 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddKhachHangComponent } from './add-khach-hang/add-khach-hang.component';
 import { AddXeComponent } from './add-xe/add-xe.component';
+import { AddhangxeComponent } from './addhangxe/addhangxe.component';
 import { AddhopdongComponent } from './addhopdong/addhopdong.component';
+import { AddnhanvienComponent } from './addnhanvien/addnhanvien.component';
 import { DangNhapComponent } from './dang-nhap/dang-nhap.component';
 import { EditKhachHangComponent } from './edit-khach-hang/edit-khach-hang.component';
 import { EdithopdongComponent } from './edithopdong/edithopdong.component';
+import { EditnhanvienComponent } from './editnhanvien/editnhanvien.component';
 import { EditxeComponent } from './editxe/editxe.component';
+import { HangxeComponent } from './hangxe/hangxe.component';
 import { HopdongComponent } from './hopdong/hopdong.component';
 import { KhachhangComponent } from './khachhang/khachhang.component';
+import { NhanvienComponent } from './nhanvien/nhanvien.component';
 import { AuthGuard } from './services/auth.guard';
 import { TrangchuComponent } from './trangchu/trangchu.component';
 import { XeComponent } from './xe/xe.component';
@@ -25,7 +30,12 @@ const routes: Routes = [
   {path: 'edit-xe/:id', component: EditxeComponent},
   {path: 'hopdong', component: HopdongComponent},
   {path: 'edit-hopdong/:id', component:EdithopdongComponent},
-  {path: 'add-hopdong', component: AddhopdongComponent}
+  {path: 'add-hopdong', component: AddhopdongComponent},
+  {path: 'hangxe', component: HangxeComponent},
+  {path: 'add-hangxe', component: AddhangxeComponent},
+  {path: 'nhanvien', component: NhanvienComponent},
+  {path: 'add-nhanvien', component: AddnhanvienComponent},
+  {path: 'edit-nhanvien/:id', component: EditnhanvienComponent}
 ];
 
 @NgModule({
