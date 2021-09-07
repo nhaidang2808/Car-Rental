@@ -1,4 +1,4 @@
-<div class="leftMenu" id="leftMenu">
+<div class="leftMenu" id="leftMenu" *ngIf="isLoggedIn$ | async as isLoggedIn">
   <div class="leftMenu__title">
     <p>ADMIN PAGE</p>
   </div>
@@ -42,6 +42,10 @@
       </a>
     </div>
     <div class="line-bottom"></div>
+
+  </div>
+  <div class="leftMenu__content__button">
+    <button  (click)="onLogout()" *ngIf="isLoggedIn" class="button_leftmenu">Đăng xuất</button>
   </div>
 </div>
 

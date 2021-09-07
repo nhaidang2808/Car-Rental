@@ -9,8 +9,9 @@ export class KhachHang {
   public sdt:string = ""
   public tinhtrang: any;
   public ngaysinh:string = "";
+  public cccd:String = "";
 
-  constructor(id:string, hoten:string, solanthue:string, diachi:string, sdt:string, tinhtrang:any, ngaysinh:string) {
+  constructor(id:string, hoten:string, solanthue:string, diachi:string, sdt:string, tinhtrang:any, ngaysinh:string, cccd:string) {
     this.id = id;
     this.hoten = hoten;
     this.solanthue = solanthue;
@@ -18,5 +19,6 @@ export class KhachHang {
     this.sdt = sdt;
     this.tinhtrang = tinhtrang;
     this.ngaysinh = ngaysinh;
+    this.cccd = cccd;
   }
 }

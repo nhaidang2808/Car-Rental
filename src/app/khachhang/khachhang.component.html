@@ -1,4 +1,4 @@
-<div class="khachhang">
+<div class="khachhang" >
   <div class="khachhang__title">
     <p>Danh Sách Khách Hàng</p>
   </div>
@@ -18,6 +18,9 @@
       </div>
       <div class="khachhang__content__subtitle">
         <p>Ngày sinh</p>
+      </div>
+      <div class="khachhang__content__subtitle">
+        <p>Căn cước</p>
       </div>
       <div class="khachhang__content__subtitle">
         <p> Số lần thuê xe</p>
@@ -47,7 +50,9 @@
       <div class="khachhang__content__filter__item">
         <input  class="filter-input" type="date" [(ngModel)]="ngaysinh" placeholder="Lọc theo ngày sinh">
       </div>
-
+      <div class="khachhang__content__filter__item">
+        <input class="filter-input" type="number" [(ngModel)]="cccd" placeholder="Lọc theo cccd">
+      </div>
       <div class="khachhang__content__filter__item">
         <input  class="filter-input" type="number" [(ngModel)]="solanthue" placeholder="Lọc số lần thuê">
       </div>
@@ -75,6 +80,9 @@
       </div>
       <div class="khachhang__content__subitem">
         <p>{{item?.ngaysinh | date : "dd/MM/yyyy"}}</p>
+      </div>
+      <div class="khachhang__content__subitem">
+        <p>{{item?.cccd}}</p>
       </div>
       <div class="khachhang__content__subitem">
         <p>{{item?.solanthue}}</p>

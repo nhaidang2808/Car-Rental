@@ -4,19 +4,31 @@
       "hoten": "lê văn a",
       "solanthue": "2",
       "id": 1,
-      "sdt": "0123456789",
-      "diachi": "123/123",
-      "tinhtrang": "false",
-      "ngaysinh": "2003-02-19"
+      "sdt": 12345789,
+      "diachi": "ádadas",
+      "tinhtrang": "true",
+      "ngaysinh": "1999-12-12",
+      "cccd": 45789458723
     },
     {
       "hoten": "nguyen van b",
       "solanthue": "2",
       "id": 2,
-      "sdt": "1231212312",
-      "diachi": "123/789",
-      "tinhtrang": "false",
-      "ngaysinh": "2021-09-23"
+      "sdt": "1231231312312",
+      "diachi": "ádasdqasd",
+      "tinhtrang": "true",
+      "ngaysinh": "1999-12-20",
+      "cccd": 45789458722
+    },
+    {
+      "hoten": "asdasdasd",
+      "solanthue": "2",
+      "id": 3,
+      "sdt": "12312312312",
+      "diachi": "123/890",
+      "tinhtrang": "true",
+      "ngaysinh": "2003-12-30",
+      "cccd": "045789458724"
     }
   ],
   "xe": [
@@ -45,26 +57,59 @@
   ],
   "hopdongthue": [
     {
-      "id": 1,
-      "nguoithue": "lê văn a",
-      "songaythue": "2 ngày",
-      "ngaygiaoxe": "2021-09-17",
-      "ngaytraxe": "2021-09-19",
-      "gia": "4000000",
-      "trangthai": "true",
-      "trehan": "false",
-      "phitrehan": "0"
-    },
-    {
       "id": 2,
-      "nguoithue": "Lê Văn c",
+      "nguoithue": "nguyen van b",
       "songaythue": "31 ngày",
       "ngaygiaoxe": "2020-08-18",
       "ngaytraxe": "2020-09-20",
       "gia": "3000000",
       "trangthai": "true",
       "trehan": "false",
-      "phitrehan": "0"
+      "phitrehan": "0",
+      "cccd": "045789458722"
+    },
+    {
+      "id": 3,
+      "nguoithue": "nguyen van b",
+      "songaythue": "3",
+      "ngaygiaoxe": "2021-09-06",
+      "ngaytraxe": "2021-09-11",
+      "gia": "5000000",
+      "trangthai": "true",
+      "trehan": "false",
+      "phitrehan": "0",
+      "cccd": "045789458721"
+    },
+    {
+      "id": 4,
+      "nguoithue": "lê văn a",
+      "songaythue": "2",
+      "ngaygiaoxe": "2021-09-06",
+      "ngaytraxe": "2021-09-08",
+      "gia": "100",
+      "trangthai": "true",
+      "trehan": "false",
+      "phitrehan": "0",
+      "cccd": "045789458723"
+    },
+    {
+      "id": 5,
+      "nguoithue": "asdasdasd",
+      "songaythue": "2",
+      "ngaygiaoxe": "2021-12-20",
+      "ngaytraxe": "2021-12-23",
+      "gia": "3000000",
+      "trehan": "true",
+      "phitrehan": "5000000",
+      "trangthai": "true",
+      "cccd": "045789458724"
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "name": "giale234",
+      "password": "1234"
     }
   ]
 }

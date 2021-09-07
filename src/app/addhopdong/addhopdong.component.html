@@ -1,0 +1,76 @@
+<div class="add-khachhang">
+  <div class="add-khachhang__title">
+    <p>THÊM MỚI XE</p>
+  </div>
+  <div class="add-khachhang__form">
+    <form [formGroup]="HopDongForm" (ngSubmit)="onSubmit()" class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Người thuê</mat-label>
+        <input formControlName="nguoithue" required matInput placeholder="vd: le van c" value="">
+        <span *ngIf="HopDongForm.controls.nguoithue.invalid">
+          *Cần nhập tên người thuê
+        </span>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Số ngày thuê</mat-label>
+        <input formControlName="songaythue" required matInput placeholder="vd: 2 ngày" value="">
+        <span *ngIf="HopDongForm.controls.songaythue.invalid">
+          *Cần nhập số ngày thuê
+        </span>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Ngày giao xe</mat-label>
+        <input type="date" formControlName="ngaygiaoxe" required matInput placeholder="vd: 21/2/2021" value="">
+        <span *ngIf="HopDongForm.controls.ngaygiaoxe.invalid">
+          *Cần nhập ngày giao xe
+        </span>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Ngày trả xe</mat-label>
+        <input type="date" formControlName="ngaytraxe" required matInput placeholder="vd: 21/2/2021" value="">
+        <span *ngIf="HopDongForm.controls.ngaytraxe.invalid">
+          *Cần nhập ngày trả xe
+        </span>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Giá</mat-label>
+        <input type="text" mvndrMatCurrencyFormat [allowNegative]="false" [currencyCode]="'VND'" [value]="usAmount"
+          (blur)="updateUSAmount($event)" formControlName="gia" required matInput placeholder="vd: 10000000" value="">
+        <span *ngIf="HopDongForm.controls.gia.invalid">
+          *Cần nhập giá
+        </span>
+      </mat-form-field>
+      <div class="select-group">
+        <div class="select">
+          <select formControlName="trangthai" class="round">
+            <option value="true">Đã thanh toán</option>
+            <option value="false">Chưa thanh toán</option>
+          </select>
+        </div>
+        <div class="select">
+          <select formControlName="trehan" class="round">
+            <option value="true">Trễ hạn</option>
+            <option value="false">Đúng hạn</option>
+          </select>
+        </div>
+      </div>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Phí trễ hạn</mat-label>
+        <input type="text" mvndrMatCurrencyFormat [allowNegative]="false" [currencyCode]="'VND'"
+          [value]="usAmountPhiTreHan" (blur)="updateUSAmountPhiTreHan($event)" formControlName="phitrehan" required
+          matInput placeholder="vd: 10000000" value="">
+        <span *ngIf="HopDongForm.controls.phitrehan.invalid">
+          *Cần nhập phí trễ hạn
+        </span>
+      </mat-form-field>
+
+
+
+
+      <button type="submit" [disabled]="!HopDongForm.valid" mat-raised-button color="primary"
+        class="btn btn-default">Hoàn
+        tất</button>
+    </form>
+
+  </div>
+</div>

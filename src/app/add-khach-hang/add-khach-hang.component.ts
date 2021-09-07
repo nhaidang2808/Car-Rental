@@ -19,6 +19,7 @@ export class AddKhachHangComponent implements OnInit {
     diachi: new FormControl(''),
     tinhtrang: new FormControl(),
     ngaysinh: new FormControl(''),
+    cccd:new FormControl(''),
   })
 
   constructor(

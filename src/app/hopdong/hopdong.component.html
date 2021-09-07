@@ -11,6 +11,9 @@
         <p>Người thuê</p>
       </div>
       <div class="khachhang__content__subtitle">
+        <p>CCCD</p>
+      </div>
+      <div class="khachhang__content__subtitle">
         <p>Số ngày thuê</p>
       </div>
       <div class="khachhang__content__subtitle">
@@ -41,6 +44,9 @@
       </div>
       <div class="khachhang__content__filter__item">
         <input class="filter-input" type="text" [(ngModel)]="nguoithue" placeholder="Lọc người thuê">
+      </div>
+      <div class="khachhang__content__filter__item">
+        <input class="filter-input" type="text" [(ngModel)]="cccd" placeholder="Lọc cccd">
       </div>
       <div class="khachhang__content__filter__item">
         <input class="filter-input filter-padding" type="text" [(ngModel)]="songaythue" placeholder="Lọc số ngày thuê">
@@ -79,6 +85,9 @@
       </div>
       <div class="khachhang__content__subitem">
         <p>{{item.nguoithue}}</p>
+      </div>
+      <div class="khachhang__content__subitem">
+        <p>{{item.cccd}}</p>
       </div>
       <div class="khachhang__content__subitem">
         <p>{{item.songaythue}}</p>

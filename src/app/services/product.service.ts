@@ -18,7 +18,12 @@ export class ProductService {
   private REST_API_SERVER = 'http://localhost:3000';
   constructor(private httpClient: HttpClient) {}
 
-
+  getUser(): Observable<any> {
+    const url = `${this.REST_API_SERVER}/user`;
+    return this.httpClient
+    .get<any>(url,this.httpOptions)
+    .pipe(catchError(this.handleError));
+  }
   getKhachHang(): Observable<any> {
     const url = `${this.REST_API_SERVER}/khachhang`;
     return this.httpClient

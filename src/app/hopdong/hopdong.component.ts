@@ -18,6 +18,7 @@ export class HopdongComponent implements OnInit {
   trangthai: string = '*';
   trehan: string = '*';
   phitrehan: string = '';
+  cccd:string = "";
   public hopdong: any[] = [];
   public totalHopDong = 0;
   public curPage: number = 0;

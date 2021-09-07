@@ -8,7 +8,6 @@ p {
   height: 100vh;
   background: #1d262bde;
   overflow: hidden;
-  transition: 2s;
 }
 .leftMenu__title{
   border-bottom: 2px solid #0a253524;
@@ -74,4 +73,18 @@ background-color: #76838F;
   text-align: center;
   padding: 20px 0;
   border-radius: 3px;
+}
+.leftMenu__content__button{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  border: none;
+  margin: 20px 0;
+  padding: 3px;
+}
+.button_leftmenu{
+  border: none;
+  padding: 10px 50px;
+  background: #1a1f21;
+  color: white;
 }

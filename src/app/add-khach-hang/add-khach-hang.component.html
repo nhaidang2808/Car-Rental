@@ -33,7 +33,13 @@
           *Cần nhập ngày sinh
         </span>
       </mat-form-field>
-
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Căn cước công dân</mat-label>
+        <input formControlName="cccd" required matInput placeholder="vd: 045099000024" value="">
+        <span *ngIf="KhachHangForm.controls.cccd.invalid">
+          *Cần nhập căn cước công dân
+        </span>
+      </mat-form-field>
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Số lần thuê</mat-label>
         <input formControlName="solanthue" required matInput placeholder="vd: 1" value="">

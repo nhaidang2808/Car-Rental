@@ -42,6 +42,10 @@ import { HopdongPipe } from './pipes/hopdong.pipe';
 import { HopdongTrehanPipe } from './pipes/hopdong-trehan.pipe';
 import { HopdongTrangthaiPipe } from './pipes/hopdong-trangthai.pipe';
 import { EdithopdongComponent } from './edithopdong/edithopdong.component';
+import { AddhopdongComponent } from './addhopdong/addhopdong.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
@@ -68,6 +72,8 @@ import { EdithopdongComponent } from './edithopdong/edithopdong.component';
     HopdongTrehanPipe,
     HopdongTrangthaiPipe,
     EdithopdongComponent,
+    AddhopdongComponent,
+
 
   ],
   imports: [
@@ -89,6 +95,8 @@ import { EdithopdongComponent } from './edithopdong/edithopdong.component';
     NgxPaginationModule,
     MatCurrencyFormatModule,
     MatDialogModule,
+    MatToolbarModule,
+    MatCardModule,
   ],
   exports: [
     MatFormFieldModule,
