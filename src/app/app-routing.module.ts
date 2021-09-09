@@ -21,21 +21,21 @@ import { XeComponent } from './xe/xe.component';
 const routes: Routes = [
   {path: '', component: TrangchuComponent, canActivate:[AuthGuard]},
   {path:'login', component: DangNhapComponent},
-  {path:'trangchu', component:TrangchuComponent},
-  {path:'khachhang', component: KhachhangComponent},
-  {path: 'add-khachhang', component: AddKhachHangComponent},
-  {path: 'edit-khachhang/:id', component: EditKhachHangComponent},
-  {path: 'xe', component: XeComponent},
-  {path: 'add-xe', component: AddXeComponent},
-  {path: 'edit-xe/:id', component: EditxeComponent},
-  {path: 'hopdong', component: HopdongComponent},
-  {path: 'edit-hopdong/:id', component:EdithopdongComponent},
-  {path: 'add-hopdong', component: AddhopdongComponent},
-  {path: 'hangxe', component: HangxeComponent},
-  {path: 'add-hangxe', component: AddhangxeComponent},
-  {path: 'nhanvien', component: NhanvienComponent},
-  {path: 'add-nhanvien', component: AddnhanvienComponent},
-  {path: 'edit-nhanvien/:id', component: EditnhanvienComponent}
+  {path:'trangchu', component:TrangchuComponent, canActivate:[AuthGuard]},
+  {path:'khachhang', component: KhachhangComponent, canActivate:[AuthGuard]},
+  {path: 'add-khachhang', component: AddKhachHangComponent, canActivate:[AuthGuard]},
+  {path: 'edit-khachhang/:id', component: EditKhachHangComponent, canActivate:[AuthGuard]},
+  {path: 'xe', component: XeComponent, canActivate:[AuthGuard]},
+  {path: 'add-xe', component: AddXeComponent, canActivate:[AuthGuard]},
+  {path: 'edit-xe/:id', component: EditxeComponent, canActivate:[AuthGuard]},
+  {path: 'hopdong', component: HopdongComponent, canActivate:[AuthGuard]},
+  {path: 'edit-hopdong/:id', component:EdithopdongComponent, canActivate:[AuthGuard]},
+  {path: 'add-hopdong', component: AddhopdongComponent, canActivate:[AuthGuard]},
+  {path: 'hangxe', component: HangxeComponent, canActivate:[AuthGuard]},
+  {path: 'add-hangxe', component: AddhangxeComponent, canActivate:[AuthGuard]},
+  {path: 'nhanvien', component: NhanvienComponent, canActivate:[AuthGuard]},
+  {path: 'add-nhanvien', component: AddnhanvienComponent, canActivate:[AuthGuard]},
+  {path: 'edit-nhanvien/:id', component: EditnhanvienComponent, canActivate:[AuthGuard]}
 ];
 
 @NgModule({
